@@ -99,16 +99,30 @@ const Section = styled.div`
     flex-direction : row;
     align-items : center;
     justify-content : space-between;
+    margin : 60px 0px;
 `;
-const Rectangle = styled.div`
-    width : 70%;
-    background : #19223C;
+
+interface RectProps {
+    alignment : string,
+    width : string
+}
+const Rectangle = styled.div<RectProps>` 
+    width : ${props => props.width};
+    background: repeating-linear-gradient(
+        45deg,
+        #121829,
+        #121829 10px,
+        transparent 10px,
+        transparent 20px
+      );
     height : 300px;
+    border-radius : 6px;
     position : absolute;
     z-index : -1;
     top: 50%;
     transform: translateY(-50%);
-    right : 0;
+    right : ${props => props.alignment === 'right' ? 0 : null};
+    left : ${props => props.alignment === 'left' ? 0 : null};
 `;
 const Title = styled.h1`
     color : ${props => props.theme.text.main};
@@ -160,11 +174,94 @@ const AnimatedSvg = styled.svg<ContactProps>`
     }
 `;
 
+
+/* Info Box */
+const InfoWrapper = styled.div`
+    min-width : 650px;
+`
+
+const InfoHeaderWrapper = styled.div`
+    display : flex;
+    flex-direction : row;
+    align-items : center;
+    margin-bottom : 37px;
+`;
+
+const SectionTitle = styled.div`
+    min-width : 200px;
+    color : ${props => props.theme.main};
+    font-size : 25px;
+`;
+
+const SectionHeaderDelimiterCircle = styled.div`
+    width : 20px;
+    height: 14px; 
+    border-radius : 50%;
+    background : ${props => props.theme.main};
+`;
+
+const SectionHeaderDelimiterLine = styled.div`
+    width : 100%;
+    height : 2px;
+    background : ${props => props.theme.main};
+`;
+
+const SectionText = styled.div`
+    color : ${props => props.theme.text.main};
+    margin-top
+`;
+
+const TabContentWrapper = styled.div`
+    padding : 8px 12px;
+`;
+const MainPosition = styled.h5`
+    color : ${props => props.theme.text.main};
+    font-size : 15px;
+    font-weight : 500px;
+`;
+
+const TechStackTitle = styled.h2`
+    color : ${props => props.theme.main};
+    font-size : 22px;
+    font-weight : 400;
+
+    display : flex;
+    align-items : center;
+    svg{
+        margin : 0px 4px;
+        cursor : pointer;
+        color : ${props => props.theme.filler};
+
+        &:hover{
+            color : ${props => props.theme.text.secondary};
+        }
+    }
+`;
+
+
+const BulletList = styled.ul`
+    li{
+        display : flex;
+        align-items : center;
+        margin : 4px 0px;
+
+        svg{
+            color : ${props => props.theme.secondary};
+            margin-right : 8px;
+        }
+    }
+    list-style-type: none;
+    color : ${props => props.theme.text.main};
+    font-size : 13px;
+`;
 const GlobalStyle = createGlobalStyle`
+    html {
+        min-height: 100%;
+    }
     body {
         margin : 0;
         padding : 0;
-        background : #222E4F;
+        background : linear-gradient(#131a2b 50%, #1C0E12 72%);
         font-family: 'Roboto Slab', serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -176,9 +273,52 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Container = styled.div`
-    max-width : 1500px;
+    max-width : 1310px;
     margin : 0 auto;
-    height : 300px;
+`;
+
+/* Services Section */
+
+const ServicesSection = styled.div`
+    background: #121829;    
+    margin : 200px 0px;
+    padding : 20px 0px;
+
+    h2 {
+        text-align : center;
+        color : ${props => props.theme.text.main};
+    }
+`;
+
+const ServicesWrapper = styled.div`
+    margin : 0 auto;
+    max-width : 1400px;
+    display : flex;
+    justify-content : space-evenly;
+    align-items : center;
+`;
+
+const ServiceWrapper = styled.div`
+    max-width : 350px;
+    color : ${props => props.theme.text.main};
+    display : flex;
+    flex-direction : column;
+
+    h3 {    
+        font-size : 18px;
+        font-weight : 500px;
+        text-align : center;
+        width : 100%;
+    }
+`;
+
+/* Articles */
+const ArticlesWrapper = styled.div`
+    width : 100%;
+    display : flex;
+    flex-direction : row;
+    justify-content : space-evenly;
+    margin-top : 10px;
 `;
 
 
@@ -196,7 +336,21 @@ export {
     Description,
     ContactMeButton,
     SayHiButton,
-    AnimatedSvg
+    AnimatedSvg,
+    InfoWrapper,
+    InfoHeaderWrapper,
+    SectionTitle,
+    SectionHeaderDelimiterCircle,
+    SectionHeaderDelimiterLine,
+    SectionText,
+    MainPosition,
+    BulletList,
+    TabContentWrapper,
+    ServiceWrapper,
+    ServicesWrapper,
+    ServicesSection,
+    ArticlesWrapper,
+    TechStackTitle
 }
 
 
