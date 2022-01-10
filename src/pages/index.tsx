@@ -7,6 +7,9 @@ import LandingSection from "../components/LandingSection";
 import AboutMe from "../components/AboutMe";
 import Services from "../components/Services";
 import Writing from "../components/Writing";
+import Projects from "../components/Projects";
+import FAQ from "../components/FAQ";
+import WhatNow from "../components/WhatNow";
 
 type Theme = {
     main : string,
@@ -43,7 +46,10 @@ const IndexPage = () => {
             <Services/>  
 
             <SC.Container>
-              <Writing/>     
+              <Writing/>  
+              <Projects/>  
+              <FAQ/> 
+              <WhatNow/>
             </SC.Container>  
         </ThemeProvider>
     )

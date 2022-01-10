@@ -20,16 +20,34 @@ const TagWrapper = styled.div`
     }
 `;
 
+const SmallTagWrapper = styled(TagWrapper)`
+    width : 70px;
+    height : 30px;
+    line-height : 30px;
+    border : 2px solid ${props => props.theme.secondary};
+    box-shadow: none;
+    margin : 5px 5px;
+    float : right;
+
+    &:hover{
+        background : none;
+        box-shadow: none;
+    }
+`;
+
+type Size = 'large' | 'small';
 interface TechProps {
     title : string,
-
+    size? : Size
 }
 
-const TechTag = ({title} : TechProps) => {
+const TechTag = ({title, size = 'large'} : TechProps) => {
     return(
-        <TagWrapper>
+        size === 'large' ? <TagWrapper>
             {title}
-        </TagWrapper>
+        </TagWrapper> : <SmallTagWrapper>
+            {title}
+        </SmallTagWrapper>
     )
 };
 

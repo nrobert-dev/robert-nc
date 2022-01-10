@@ -3,7 +3,7 @@ import styled, {createGlobalStyle} from 'styled-components';
 
 
 interface ContactProps {
-    animTriggered : boolean
+    animTriggered? : boolean
 }
 
 /* Header */
@@ -261,7 +261,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         margin : 0;
         padding : 0;
-        background : linear-gradient(#131a2b 50%, #1C0E12 72%);
+        background : linear-gradient(#131a2b 60%, #1C0E12 82%);
         font-family: 'Roboto Slab', serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -321,6 +321,107 @@ const ArticlesWrapper = styled.div`
     margin-top : 10px;
 `;
 
+/* Project */
+
+const ProjectsWrapper = styled.section`
+    width : 100%;
+    display : flex;
+    justify-content : center;
+    flex-direction : column;
+`;
+
+const ProjectWrapper = styled.div`
+    display : flex;
+    flex-direction : row;
+    margin : 49px 0px;
+`;
+
+const DescriptionWrapper = styled.div`
+    max-width : 600px;
+    background: #19223C;
+    border-radius : 6px;
+    position : relative;
+    margin : auto 0;
+    box-sizing : border-box;
+    padding : 20px 25px;
+    z-index : 0;
+    box-shadow: ${props => props.theme.main} 0px 0px 0px 0px inset, #1C0E12 -8px 9px 0px -3px, ${props => props.theme.secondary} -8px 9px;
+
+    h4 {
+        color : ${props => props.theme.secondary};
+        margin : 0;
+        font-size : 22px;
+        font-weight : 400;
+    }
+
+    p {
+        color : ${props => props.theme.text.main};
+        font-size : 14px;
+    }
+`;
+
+const VisitProject = styled.div`
+    position : absolute;
+    top : 20px;
+    right : 20px;
+    cursor : pointer;
+    color : ${props => props.theme.secondary};
+    z-index : 10;
+
+    svg{
+        margin : 0px 5px;
+        &:hover{
+            color : ${props => props.theme.text.secondary};
+        }
+    }
+  
+`;
+
+
+const FAQContainer = styled.section`
+    width : 100%;
+    margin : 200px 0px;
+    display : flex;
+    justify-content : center;
+    flex-direction : column;
+    align-items : center;
+
+    h4{
+        grid-area : hd;
+        color : ${props => props.theme.main};
+        font-size : 22px;
+        text-align : center;
+    }
+`;
+const FAQWrapper = styled.div`
+    width : 800px;
+    display : flex;
+    justify-content : space-around;
+    flex-direction : row;
+    flex-wrap : wrap;
+`;
+
+export const WhatNowWrapper = styled.section`
+    margin : 300px 0px 100px 0px;
+    height : 200px;
+    display : flex;
+    justify-content : space-around;
+    align-items : center;
+    flex-direction : column;
+
+    h1{
+        color : ${props => props.theme.main};
+        font-size : 37px;
+        margin : 0;
+    }
+
+    h5{
+        color : ${props => props.theme.text.main};
+        font-size : 20px;
+        font-weight : 400;
+        margin : 0;
+    }
+`;
 
 export {
     NavLine,
@@ -350,7 +451,13 @@ export {
     ServicesWrapper,
     ServicesSection,
     ArticlesWrapper,
-    TechStackTitle
+    TechStackTitle,
+    ProjectWrapper,
+    ProjectsWrapper,
+    DescriptionWrapper,
+    VisitProject,
+    FAQWrapper,
+    FAQContainer
 }
 
 
