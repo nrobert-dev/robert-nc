@@ -1,22 +1,35 @@
-import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
-
+import { Animation } from '../types';
+import { fadeInStyleCreator, staticStyleCreator, StyleInObject, StyleOutObject} from '../utils';
 
 interface ContactProps {
     animTriggered? : boolean
 }
 
+const AnimationWrapper = styled.div<Animation>`
+    transition : all 1s ease-in-out;
+    transition-delay : ${props => props.delay || 0};
+    position : relative;
+
+    ${props => props.triggered ? fadeInStyleCreator(props.direction) : staticStyleCreator(props.direction)}; 
+`;
+
 /* Header */
-const HeaderContainer = styled.nav`
+const HeaderContainer = styled.nav<ContactProps>`
     width : 100%;
-    height : 40px;
-    margin-top : 11px;
+    height : 70px;
     margin-bottom : 8px;
     box-sizing : border-box;
     display : flex;
     flex-direction : row;
     justify-content : flex-end;
     align-items : center;
+    position : relative;
+    box-shadow: ${props => props.animTriggered ? 'box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;' : null};
+
+    top : ${props => props.animTriggered ? '-60px' : '0px'};
+
+    transition : top 0.4s ease-in, box-shadow 0.4s ease-in;
 `;
 
 const NavGroup = styled.ul`
@@ -92,6 +105,8 @@ const SayHiButton = styled.div<ContactProps>`
 `;
 /* End Header */
 
+
+
 /* Section */
 const Section = styled.div`
     position : relative;
@@ -110,8 +125,8 @@ const Rectangle = styled.div<RectProps>`
     width : ${props => props.width};
     background: repeating-linear-gradient(
         45deg,
-        #121829,
-        #121829 10px,
+        #0b0f1a,
+        #0b0f1a 10px,
         transparent 10px,
         transparent 20px
       );
@@ -257,6 +272,7 @@ const BulletList = styled.ul`
 const GlobalStyle = createGlobalStyle`
     html {
         min-height: 100%;
+        scroll-behavior: smooth;
     }
     body {
         margin : 0;
@@ -280,7 +296,7 @@ const Container = styled.div`
 /* Services Section */
 
 const ServicesSection = styled.div`
-    background: #121829;    
+    background: #0b0f1a;    
     margin : 200px 0px;
     padding : 20px 0px;
 
@@ -333,7 +349,7 @@ const ProjectsWrapper = styled.section`
 const ProjectWrapper = styled.div`
     display : flex;
     flex-direction : row;
-    margin : 49px 0px;
+    margin-bottom : 49px;
 `;
 
 const DescriptionWrapper = styled.div`
@@ -423,6 +439,7 @@ export const WhatNowWrapper = styled.section`
     }
 `;
 
+
 export {
     NavLine,
     NavGroup,
@@ -457,7 +474,8 @@ export {
     DescriptionWrapper,
     VisitProject,
     FAQWrapper,
-    FAQContainer
+    FAQContainer,
+    AnimationWrapper
 }
 
 

@@ -4,7 +4,6 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const Services = () => {
     return(
-        <>
             <SC.ServicesSection>
                     <h2>I provide the following services</h2>
                     <SC.ServicesWrapper>
@@ -43,7 +42,6 @@ const Services = () => {
                         </SC.ServiceWrapper>               
                     </SC.ServicesWrapper>
                 </SC.ServicesSection>   
-        </>
     )
 };
 

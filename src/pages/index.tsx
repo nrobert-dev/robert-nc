@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import * as SC from "../components/Index.styles";
 import Seo from "../components/seo"
 import LandingSection from "../components/LandingSection";
-import AboutMe from "../components/AboutMe";
+import AboutMe from "../components/AboutMe/AboutMe";
 import Services from "../components/Services";
 import Writing from "../components/Writing";
 import Projects from "../components/Projects";

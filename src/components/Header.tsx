@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import { useOffset } from '../hooks';
 import * as SC from './Index.styles';
+
 
 
 const navArray : string[] = [
@@ -10,8 +12,10 @@ const navArray : string[] = [
 ];
 
 const Header = () => {
+    const [offset] = useOffset();
+
     return(
-        <SC.HeaderContainer>
+        <SC.HeaderContainer animTriggered={offset > 30}>
             <SC.NavGroup>
                 {navArray.map((element,index) => 
                 <SC.NavItem>
