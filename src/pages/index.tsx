@@ -12,6 +12,7 @@ import FAQ from "../components/FAQ";
 import WhatNow from "../components/WhatNow";
 import { AppStore, LIGHT_THEME, THEME, State, Action, Themes } from "../utils";
 import ThemeToggle from "../components/ThemeToggle";
+import { useOffset } from "../hooks";
 
 const initialState = {
     currentTheme : THEME
@@ -32,6 +33,7 @@ const reducer = (state : State, action : Action) : State => {
 
 const IndexPage = () => {
     const [state,dispatch] = useReducer(reducer, initialState);
+    const [offset] = useOffset();
 
     const toggleTheme = () => {
         dispatch({
@@ -60,6 +62,7 @@ const IndexPage = () => {
                 <Projects/>  
                 <FAQ/> 
                 <WhatNow/>
+                {state.currentTheme.id === Themes.Light && <SC.BackgroundStripes scroll={offset as number}/>}
                 </SC.Container>  
                 <ThemeToggle darkModeOn={state.currentTheme.id === Themes.Dark} toggleTheme={toggleTheme}/>
             </ThemeProvider>

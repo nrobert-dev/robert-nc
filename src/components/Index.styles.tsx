@@ -1,6 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import { Animation } from '../types';
-import { fadeInStyleCreator, staticStyleCreator} from '../utils';
+import { fadeInStyleCreator, lerp, staticStyleCreator} from '../utils';
 
 interface ContactProps {
     animTriggered? : boolean
@@ -121,6 +121,27 @@ interface RectProps {
     alignment : string,
     width : string
 }
+
+interface Stripes {
+    scroll : number
+}
+const BackgroundStripes = styled.div<Stripes>`
+    width : 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        ${props => props.theme.dark},
+        ${props => props.theme.dark} 100px,
+        transparent 100px,
+        transparent 200px
+    );
+    height : 100%;
+    opacity : ${props => lerp(0,0.3,props.scroll/6000)};
+    border-radius : 6px;
+    position : fixed;
+    bottom : 0;
+    z-index : -1;
+    right : 0;      
+`;
 const Rectangle = styled.div<RectProps>` 
     width : ${props => props.width};
     background: repeating-linear-gradient(
@@ -145,6 +166,9 @@ const Title = styled.h1`
     font-weight : 400;
     margin : 0;
 
+    span {
+        color : ${props => props.theme.secondary};
+    }
     strong {
         color : ${props => props.theme.main};
     }
@@ -216,6 +240,10 @@ const SectionTitle = styled.div`
     min-width : 200px;
     color : ${props => props.theme.main};
     font-size : 25px;
+
+    span{
+        color : ${props => props.theme.secondary};
+    }
 `;
 
 const SectionHeaderDelimiterCircle = styled.div`
@@ -512,7 +540,8 @@ export {
     FAQContainer,
     AnimationWrapper,
     ProjectImageGradient,
-    ProjectImageWrapper
+    ProjectImageWrapper,
+    BackgroundStripes
 }
 
 

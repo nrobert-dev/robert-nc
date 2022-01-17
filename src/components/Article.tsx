@@ -5,8 +5,8 @@ import ArticleIcon from '@mui/icons-material/Article';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 
 const ArticleWrapper = styled.div`
-    width: 278px;
-    height: 265px;
+    width: 288px;
+    height: 295px;
 
     background: ${props => props.theme.cards.background};
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -24,14 +24,14 @@ const ArticleWrapper = styled.div`
     h5{
         margin-top : 47px;
         color : ${props => props.theme.text.main};
-        font-size : 18px;
+        font-size : 16px;
         font-weight : 400;
 
     }
 
     p {
         color : ${props => props.theme.text.main};
-        font-size : 13px;
+        font-size : 12px;
     }
 `;
 

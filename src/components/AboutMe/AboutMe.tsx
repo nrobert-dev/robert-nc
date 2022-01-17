@@ -54,7 +54,7 @@ const AboutMe = () => {
                     </div>
                     <div style={{width : '50%'}}>
                         <SC.InfoHeaderWrapper>
-                            <SC.SectionTitle> <span style={{color : THEME.text.main}}>00.</span> About Me<span style={{color : THEME.secondary}}>.</span></SC.SectionTitle>
+                            <SC.SectionTitle> <span style={{color : THEME.text.main}}>00.</span> About Me<span>.</span></SC.SectionTitle>
                             <SC.SectionHeaderDelimiterCircle/>
                             <SC.SectionHeaderDelimiterLine/>
                         </SC.InfoHeaderWrapper>

@@ -16,7 +16,7 @@ const Projects = () => {
         <SC.AnimationWrapper ref={ref} style={{margin : '100px 0px'}} triggered={inView}>
                     <div style={{width : '100%',  display : 'flex'}}>
                                 <SC.InfoHeaderWrapper style={{width : '50%', float : 'right'}}>
-                                    <SC.SectionTitle> <span style={{color : THEME.text.main}}>03.</span> Projects<span style={{color : THEME.secondary}}>.</span></SC.SectionTitle>
+                                    <SC.SectionTitle> <span style={{color : THEME.text.main}}>03.</span> Projects<span>.</span></SC.SectionTitle>
                                     <SC.SectionHeaderDelimiterCircle/>
                                     <SC.SectionHeaderDelimiterLine/>
                                 </SC.InfoHeaderWrapper>

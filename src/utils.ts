@@ -1,6 +1,9 @@
 import { Direction } from "./types";
 import React from 'react';
-import { string } from "prop-types";
+
+
+
+export const lerp = (x : number, y : number, a : number) : number => x * (1 - a) + y * a;
 
 export enum Themes {
     Light = 'light',
@@ -89,6 +92,7 @@ export const StyleOutObject = {
     opacity : 0,
     transform : 'translateY(150px)'
 };
+
 
 
 export interface Action  {
