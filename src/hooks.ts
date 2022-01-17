@@ -1,4 +1,6 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
+import {Context} from "./types/types"
+import {DARK_THEME} from "./utils"
 
 export const useOffset = () => {
     const [offset, setOffset] = useState(0);
@@ -12,4 +14,15 @@ export const useOffset = () => {
     }, []);
 
     return [offset,setOffset];
+}
+
+
+export const AppStore = React.createContext<Context | null>(null);
+export const useApplicationState = () => {
+    const context = React.useContext(AppStore);
+
+    if(!context || !context.state){
+        return ({currentTheme : DARK_THEME});
+    }
+    return context.state;
 }

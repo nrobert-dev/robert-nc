@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentAlt } from '@fortawesome/free-solid-svg-icons'
 import { useOffset } from '../hooks';
-import {THEME} from '../utils';
+
 
 const LandingSection = () => {
     const [rotationX, setRotationX] = useState(0);
@@ -23,6 +23,7 @@ const LandingSection = () => {
                 const x = e.clientX;
                 const y = e.clientY;
 
+                // @ts-ignore
                 let box = imageRef.current.getBoundingClientRect();
                 let calcX = -(y - box.y - (box.height / 2)) / constrain;
                 let calcY = (x - box.x - (box.width / 2)) / constrain;

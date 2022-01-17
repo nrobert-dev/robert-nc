@@ -1,4 +1,4 @@
-import React, {useState, useContext, useReducer} from "react";
+import React, {useReducer} from "react";
 import { ThemeProvider } from "styled-components";
 import Header from "../components/Header";
 import * as SC from "../components/Index.styles";
@@ -10,37 +10,22 @@ import Writing from "../components/Writing";
 import Projects from "../components/Projects";
 import FAQ from "../components/FAQ";
 import WhatNow from "../components/WhatNow";
-import { AppStore, LIGHT_THEME, THEME, State, Action, Themes } from "../utils";
+import { LIGHT_THEME, DARK_THEME} from "../utils";
 import ThemeToggle from "../components/ThemeToggle";
-import { useOffset } from "../hooks";
+import { AppStore, useOffset } from "../hooks"
+import { Themes, Action } from "../types/types"
+import { initialState, rootReducer } from "../data/reducer"
+import { setThemeActionCreator } from "../data/actions"
 
-const initialState = {
-    currentTheme : THEME
-}
-
-const SET_THEME_ACTION = 'gatsby/theme/SET_THEME_ACTION'
-
-const reducer = (state : State, action : Action) : State => {
-    switch(action.type){
-        case SET_THEME_ACTION:{
-            return {...state, currentTheme : action.payload}
-        }
-        default:
-            return state;
-    }
-};
 
 
 const IndexPage = () => {
-    const [state,dispatch] = useReducer(reducer, initialState);
+    const [state,dispatch] = useReducer(rootReducer, initialState);
     const [offset] = useOffset();
 
     const toggleTheme = () => {
-        dispatch({
-            type : SET_THEME_ACTION,
-            payload : state.currentTheme.id === Themes.Dark ? LIGHT_THEME : THEME
-
-        })
+        const objectToDispatch : Action = setThemeActionCreator(state.currentTheme.id === Themes.Dark ? LIGHT_THEME : DARK_THEME);
+        dispatch(objectToDispatch);
     }
 
     return(

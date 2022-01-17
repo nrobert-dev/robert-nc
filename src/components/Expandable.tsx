@@ -39,7 +39,6 @@ const Arrow = styled.span<HeaderProps>`
    
 `;
 
-
 interface ExpandableProps {
     question : string;
     answer : string

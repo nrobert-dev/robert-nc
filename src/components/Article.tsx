@@ -62,7 +62,6 @@ interface ArticleProps {
     url? : string,
     tag : string
 }
-
 const Article = (props : ArticleProps) => {
     const {title, description, tag} = props;
     return(

@@ -1,9 +1,10 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
+// @ts-ignore
 import SwipeableViews from 'react-swipeable-views';
 import { styled } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import {AppStore, THEME, useApplicationState} from "../utils";
+import { useApplicationState } from "../hooks"
 
 
 interface TabComponentProps {
@@ -63,9 +64,6 @@ const StyledTab = styled((props : StyledTabProps) => <Tab disableRipple {...prop
   );
 
 
-
-
-
 function TabPanel(props : TabPanelProps) {
     const { children, value, index, ...other } = props;
   
@@ -96,7 +94,6 @@ function TabPanel(props : TabPanelProps) {
 const TabsComponent = (props : TabComponentProps) => {
     const {tabs, tabChildren} = props;
     const [currentTab, setCurrentTab] = useState<number>(0);
-
 
     return(
         <div style={{width : '100%'}}>

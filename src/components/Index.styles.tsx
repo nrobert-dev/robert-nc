@@ -1,6 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components';
-import { Animation } from '../types';
 import { fadeInStyleCreator, lerp, staticStyleCreator} from '../utils';
+import { Animation } from "../types/types"
 
 interface ContactProps {
     animTriggered? : boolean
@@ -108,7 +108,7 @@ const SayHiButton = styled.div<ContactProps>`
 
 
 /* Section */
-const Section = styled.div`
+const Section = styled.section`
     position : relative;
     display : flex;
     flex-direction : row;
@@ -121,7 +121,6 @@ interface RectProps {
     alignment : string,
     width : string
 }
-
 interface Stripes {
     scroll : number
 }
@@ -307,6 +306,7 @@ const BulletList = styled.ul`
     color : ${props => props.theme.text.main};
     font-size : 13px;
 `;
+
 const GlobalStyle = createGlobalStyle`
     html {
         min-height: 100%;
@@ -332,7 +332,6 @@ const Container = styled.div`
 `;
 
 /* Services Section */
-
 const ServicesSection = styled.div`
     background: ${props => props.theme.dark};    
     margin : 200px 0px;
@@ -367,16 +366,19 @@ const ServiceWrapper = styled.div`
 `;
 
 /* Articles */
-const ArticlesWrapper = styled.div`
+const ArticlesWrapper = styled.section`
     width : 100%;
     display : flex;
     flex-direction : row;
     justify-content : space-evenly;
     margin-top : 10px;
+    
+    p {
+        color : ${props => props.theme.text.secondary};
+    }
 `;
 
 /* Project */
-
 const ProjectsWrapper = styled.section`
     width : 100%;
     display : flex;

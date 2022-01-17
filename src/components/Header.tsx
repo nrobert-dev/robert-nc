@@ -1,8 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { useOffset } from '../hooks';
 import * as SC from './Index.styles';
-
-
 
 const navArray : string[] = [
     'About',
@@ -10,7 +8,6 @@ const navArray : string[] = [
     'Writing',
     'Contact'
 ];
-
 const Header = () => {
     const [offset] = useOffset();
 

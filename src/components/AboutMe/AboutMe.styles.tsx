@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Animation } from '../../types';
-import { StyleInObject, StyleOutObject } from '../../utils';
+import { staticStyleCreator, fadeInStyleCreator } from '../../utils';
+import { Animation } from "../../types/types"
 
 
 const AboutMeWrapper = styled.section<Animation>`  
@@ -8,7 +8,7 @@ const AboutMeWrapper = styled.section<Animation>`
     transition : all 1s ease-in-out;
     position : relative;
 
-    ${props => props.triggered ? StyleInObject : StyleOutObject}; 
+    ${props => props.triggered ? fadeInStyleCreator() : staticStyleCreator()}; 
 `;
 
 export {

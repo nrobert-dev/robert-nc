@@ -1,7 +1,7 @@
 import React from 'react';
 import * as SC from "./Index.styles";
 import { StaticImage } from "gatsby-plugin-image"
-import {THEME} from '../utils';
+import {DARK_THEME} from '../utils';
 import TechTag from './TechTag';
 import IosShare from '@mui/icons-material/IosShare';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -16,7 +16,7 @@ const Projects = () => {
         <SC.AnimationWrapper ref={ref} style={{margin : '100px 0px'}} triggered={inView}>
                     <div style={{width : '100%',  display : 'flex'}}>
                                 <SC.InfoHeaderWrapper style={{width : '50%', float : 'right'}}>
-                                    <SC.SectionTitle> <span style={{color : THEME.text.main}}>03.</span> Projects<span>.</span></SC.SectionTitle>
+                                    <SC.SectionTitle> <span style={{color : DARK_THEME.text.main}}>03.</span> Projects<span>.</span></SC.SectionTitle>
                                     <SC.SectionHeaderDelimiterCircle/>
                                     <SC.SectionHeaderDelimiterLine/>
                                 </SC.InfoHeaderWrapper>

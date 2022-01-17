@@ -7,10 +7,17 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
+// @ts-ignore
+import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, lang, meta, title }) {
+interface MetaData {
+  description : string
+  lang : string,
+  meta : any[],
+  title : string
+}
+function Seo({ description, lang, meta, title } : MetaData) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -71,7 +78,7 @@ function Seo({ description, lang, meta, title }) {
       ].concat(meta)}
     >
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={""}/>
       <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet"/> 
     </Helmet>
   )
@@ -90,4 +97,4 @@ Seo.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-export default Seo
+export default Seo;

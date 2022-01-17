@@ -1,35 +1,8 @@
-import { Direction } from "./types";
-import React from 'react';
-
-
+import { Direction, Theme, Themes } from "./types/types"
 
 export const lerp = (x : number, y : number, a : number) : number => x * (1 - a) + y * a;
 
-export enum Themes {
-    Light = 'light',
-    Dark = 'dark'
-}
-
-type Theme = {
-    id : Themes,
-    main : string,
-    secondary : string,
-    text : {
-        main : string,
-        secondary : string
-    }
-    filler : string,
-    dark : string,
-    backgroundSet : {
-        start : string,
-        end : string
-    },
-    cards : {
-        background : string
-    }
-}
-
-export const THEME : Theme = {
+export const DARK_THEME : Theme = {
     id : Themes.Dark,
     main : '#F27D42',
     secondary : '#B12F56',
@@ -68,7 +41,6 @@ export const LIGHT_THEME : Theme = {
 }
 
 export const fadeInStyleCreator = (direction : Direction = 'y') => {
-    console.log(direction);
     return({
         opacity : 1,
         transform : direction === 'x' ? 'translateX(0)' : 'translateY(0)'
@@ -81,42 +53,3 @@ export const staticStyleCreator = (direction : Direction = 'y') => {
         transform : direction === 'x' ? 'translateX(150px)' : 'translateY(150px)'
     })
 };
-
-
-export const StyleInObject = {
-    opacity : 1,
-    transform : 'translateY(0)'
-};
-
-export const StyleOutObject = {
-    opacity : 0,
-    transform : 'translateY(150px)'
-};
-
-
-
-export interface Action  {
-    type : string,
-    payload? : any
-}
-
-export interface State {
-    currentTheme : Theme
-}
-
-export interface Context {
-    state : State,
-    dispatch? : React.Dispatch<Action>
-}
-
-
-export const AppStore = React.createContext<Context | null>(null);
-
-export const useApplicationState = () => {
-    const context = React.useContext(AppStore);
-
-    if(!context || !context.state){
-        return ({currentTheme : THEME});
-    }
-    return context.state;
-}

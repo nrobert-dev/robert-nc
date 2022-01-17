@@ -1,7 +1,7 @@
 import React from 'react';
 import * as SC from "../Index.styles";
 import { StaticImage } from "gatsby-plugin-image"
-import {THEME} from '../../utils';
+import {DARK_THEME} from '../../utils';
 import Tabs from "../Tabs";
 import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import TechTag from '../TechTag';
@@ -54,7 +54,7 @@ const AboutMe = () => {
                     </div>
                     <div style={{width : '50%'}}>
                         <SC.InfoHeaderWrapper>
-                            <SC.SectionTitle> <span style={{color : THEME.text.main}}>00.</span> About Me<span>.</span></SC.SectionTitle>
+                            <SC.SectionTitle> <span style={{color : DARK_THEME.text.main}}>00.</span> About Me<span>.</span></SC.SectionTitle>
                             <SC.SectionHeaderDelimiterCircle/>
                             <SC.SectionHeaderDelimiterLine/>
                         </SC.InfoHeaderWrapper>

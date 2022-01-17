@@ -2,7 +2,6 @@ import React from 'react';
 import Expandable from './Expandable';
 import * as SC from "./Index.styles";
 
-
 const FAQ = () => {
     return(
         <SC.FAQContainer>
