@@ -39,34 +39,41 @@ const Projects = () => {
                                         <GitHubIcon/>
                                     </SC.VisitProject>
                                 </SC.DescriptionWrapper>
-                                <StaticImage
-                                    src="../images/web.png"
-                                    width={700}
-                                    quality={95}
-                                    formats={["auto", "webp", "avif"]}
-                                    alt="A Gatsby astronaut"
-                                    style={{
-                                        borderRadius : '10px',
-                                        boxShadow: 'rgba(0, 0, 0, 0.85) 0px 5px 15px',
-                                        zIndex : 10
-                                    }}
-                                />
+                                <SC.ProjectImageWrapper>
+                                    <SC.ProjectImageGradient/>
+                                    <StaticImage
+                                        src="../images/web.png"
+                                        width={700}
+                                        quality={95}
+                                        key='boss'
+                                        formats={["auto", "webp", "avif"]}
+                                        alt="A Gatsby astronaut"
+                                        style={{
+                                            borderRadius : '10px',
+                                            zIndex : 10
+                                        }}
+                                    />
+                                </SC.ProjectImageWrapper>         
                             </SC.ProjectWrapper>
                         </SC.AnimationWrapper>
                         <SC.AnimationWrapper triggered={inView} direction='x' delay='1200ms'>
                             <SC.ProjectWrapper>
-                                <StaticImage
-                                    src="../images/web.png"
-                                    width={700}
-                                    quality={95}
-                                    formats={["auto", "webp", "avif"]}
-                                    alt="A Gatsby astronaut"
-                                    style={{
-                                        borderRadius : '10px',
-                                        boxShadow: 'rgba(0, 0, 0, 0.85) 0px 5px 15px',
-                                        zIndex : 10
-                                    }}
-                                />
+                                <SC.ProjectImageWrapper>
+                                    <SC.ProjectImageGradient/>
+                                    <StaticImage
+                                        src="../images/web.png"
+                                        width={700}
+                                        quality={95}
+                                        formats={["auto", "webp", "avif"]}
+                                        alt="A Gatsby astronaut"
+                                        style={{
+                                            borderRadius : '10px',
+                                            boxShadow: 'rgba(0, 0, 0, 0.85) 0px 5px 15px',
+                                            zIndex : 10
+                                        }}
+                                    />
+                                </SC.ProjectImageWrapper>
+                            
                                 <SC.DescriptionWrapper>
                                     <h4>Pocket Pages</h4>
                                     <p>

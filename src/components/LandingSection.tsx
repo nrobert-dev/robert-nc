@@ -36,7 +36,6 @@ const LandingSection = () => {
         }
     },[]);
 
-
     return(
         <>
             <SC.Section ref={containerRef}>
@@ -46,7 +45,7 @@ const LandingSection = () => {
                             
                 <div style={{maxWidth:'38%'}}>
                     <SC.Title>Hello, my</SC.Title>
-                    <SC.Title>name is <strong style={{color : THEME.main}}>Robert</strong>.</SC.Title>
+                    <SC.Title>name is <strong>Robert</strong>.</SC.Title>
                     <SC.Description>I am a <strong>full-stack software engineer</strong> living in Romania. I specialize in crafting <strong>dynamic, feature rich Web Experiences.</strong></SC.Description>
                     <SC.ContactMeButton animTriggered={offset > 400}>GET IN TOUCH</SC.ContactMeButton>
                 </div>
@@ -63,8 +62,8 @@ const LandingSection = () => {
             </SC.Section>
             <SC.Section>
                     <SC.AnimatedSvg animTriggered={offset > 500} width="300" height="120">
-                        <line x1="150" y1="0" x2="150" y2="120" style={{stroke : THEME.secondary , strokeWidth : 2}}/>
-                        <text x="160" y="35" style={{fill : THEME.secondary}}>
+                        <line x1="150" y1="0" x2="150" y2="120"/>
+                        <text x="160" y="35">
                             Scroll
                             <animate attributeName="y" values="35;50;35" dur="2s" repeatCount="indefinite" />
                         </text>

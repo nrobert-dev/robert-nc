@@ -1,6 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import { Animation } from '../types';
-import { fadeInStyleCreator, staticStyleCreator, StyleInObject, StyleOutObject} from '../utils';
+import { fadeInStyleCreator, staticStyleCreator} from '../utils';
 
 interface ContactProps {
     animTriggered? : boolean
@@ -74,10 +74,10 @@ const NavLine = styled.div`
 const SayHiButton = styled.div<ContactProps>`
     opacity : ${props => props.animTriggered ? 1 : 0};
     position : fixed;
-    top : 14px;
-    left : 19px;
+    top : 19px;
+    left : 25px;
     color : ${props => props.theme.main};
-    font-size : 21px;
+    font-size : 23px;
     font-weight : 500;
     cursor : pointer;
     user-select : none;
@@ -125,8 +125,8 @@ const Rectangle = styled.div<RectProps>`
     width : ${props => props.width};
     background: repeating-linear-gradient(
         45deg,
-        #0b0f1a,
-        #0b0f1a 10px,
+        ${props => props.theme.dark},
+        ${props => props.theme.dark} 10px,
         transparent 10px,
         transparent 20px
       );
@@ -144,6 +144,10 @@ const Title = styled.h1`
     font-size : 56px;
     font-weight : 400;
     margin : 0;
+
+    strong {
+        color : ${props => props.theme.main};
+    }
 `;
 const Description = styled.h4`
     color : ${props => props.theme.text.main};
@@ -160,7 +164,7 @@ const ContactMeButton = styled.div<ContactProps>`
     color : ${props => props.theme.text.main};
     border-radius : 9px;
     background : ${props => props.theme.main};
-    box-shadow: ${props => props.theme.main} 0px 0px 0px 0px inset, #222E4F 6px 7px 0px -3px, ${props => props.theme.secondary} 6px 7px;
+    box-shadow: ${props => props.theme.main} 0px 0px 0px 0px inset, ${props => props.theme.backgroundSet.start} 6px 7px 0px -3px, ${props => props.theme.secondary} 6px 7px;
     cursor : pointer;
     user-select : none;
 
@@ -169,11 +173,11 @@ const ContactMeButton = styled.div<ContactProps>`
 
     &:hover{
         background : ${props => props.theme.secondary};
-        box-shadow: ${props => props.theme.secondary} 0px 0px 0px 0px inset, #222E4F 6px 7px 0px -3px, ${props => props.theme.main} 6px 7px;
+        box-shadow: ${props => props.theme.secondary} 0px 0px 0px 0px inset, ${props => props.theme.backgroundSet.start} 6px 7px 0px -3px, ${props => props.theme.main} 6px 7px;
     }
 
     &:active{
-        box-shadow: #19223C 0px 0px 0px 0px inset, #222E4F 2px 4px 0px -3px, #19223C 2px 4px; 
+        box-shadow: #19223C 0px 0px 0px 0px inset, ${props => props.theme.backgroundSet.start} 2px 4px 0px -3px, #19223C 2px 4px; 
     }
 `;
 
@@ -186,6 +190,12 @@ const AnimatedSvg = styled.svg<ContactProps>`
     text{
         opacity : ${props => props.animTriggered ? '0' : '1'};
         transition : opacity 0.1s ease-in;
+        fill : ${props => props.theme.secondary};
+    }
+
+    line {
+        stroke : ${props => props.theme.secondary};
+        strokeWidth : 2;
     }
 `;
 
@@ -277,7 +287,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         margin : 0;
         padding : 0;
-        background : linear-gradient(#131a2b 60%, #1C0E12 82%);
+        background : linear-gradient(${props => props.theme.backgroundSet.start} 60%, ${props => props.theme.backgroundSet.end} 82%);
         font-family: 'Roboto Slab', serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -296,7 +306,7 @@ const Container = styled.div`
 /* Services Section */
 
 const ServicesSection = styled.div`
-    background: #0b0f1a;    
+    background: ${props => props.theme.dark};    
     margin : 200px 0px;
     padding : 20px 0px;
 
@@ -354,14 +364,14 @@ const ProjectWrapper = styled.div`
 
 const DescriptionWrapper = styled.div`
     max-width : 600px;
-    background: #19223C;
+    background: ${props => props.theme.cards.background};
     border-radius : 6px;
     position : relative;
     margin : auto 0;
     box-sizing : border-box;
     padding : 20px 25px;
     z-index : 0;
-    box-shadow: ${props => props.theme.main} 0px 0px 0px 0px inset, #1C0E12 -8px 9px 0px -3px, ${props => props.theme.secondary} -8px 9px;
+    box-shadow: ${props => props.theme.main} 0px 0px 0px 0px inset,  ${props => props.theme.backgroundSet.start} -8px 9px 0px -3px, ${props => props.theme.secondary} -8px 9px;
 
     h4 {
         color : ${props => props.theme.secondary};
@@ -391,6 +401,31 @@ const VisitProject = styled.div`
         }
     }
   
+`;
+
+const ProjectImageWrapper = styled.div`
+    position : relative;
+    overflow : hidden;
+    box-shadow: rgba(0, 0, 0, 0.85) 0px 5px 15px;
+    border-radius : 10px;
+
+    &:hover{
+        > * {
+            &:first-child {
+                opacity : 0.2;
+            }
+          }
+    }
+`;
+
+const ProjectImageGradient = styled.div`
+     position : absolute;
+     inset : 0 0 0 0;
+     border-radius : 10px;
+     background : linear-gradient(90deg, rgba(177,47,86,0.6390756986388305) 0%, rgba(26,102,213,0.5130252784707633) 100%);
+     z-index : 11;
+
+     transition : opacity 0.3s ease-in;
 `;
 
 
@@ -475,7 +510,9 @@ export {
     VisitProject,
     FAQWrapper,
     FAQContainer,
-    AnimationWrapper
+    AnimationWrapper,
+    ProjectImageGradient,
+    ProjectImageWrapper
 }
 
 

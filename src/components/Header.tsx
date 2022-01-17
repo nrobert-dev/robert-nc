@@ -15,7 +15,7 @@ const Header = () => {
     const [offset] = useOffset();
 
     return(
-        <SC.HeaderContainer animTriggered={offset > 30}>
+        <SC.HeaderContainer animTriggered={offset > 3}>
             <SC.NavGroup>
                 {navArray.map((element,index) => 
                 <SC.NavItem>

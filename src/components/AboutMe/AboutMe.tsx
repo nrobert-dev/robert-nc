@@ -37,7 +37,7 @@ const AboutMe = () => {
 
     const [refTech, inViewTech] = useInView({
         triggerOnce: true,
-        rootMargin: '-140px 0px',
+        rootMargin: '-190px 0px',
     });
 
     return(
@@ -45,7 +45,7 @@ const AboutMe = () => {
             <div style={{width : '100%',  display : 'flex', flexDirection : 'row', position : 'relative'}}>
                     <div style={{width : '50%', display : 'flex'}}>
                         <StaticImage
-                            src="../images/person.png"
+                            src="../../images/person.png"
                             width={600}
                             quality={95}
                             formats={["auto", "webp", "avif"]}

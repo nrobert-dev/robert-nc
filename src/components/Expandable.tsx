@@ -8,7 +8,7 @@ interface HeaderProps {
 const Header = styled.div<HeaderProps>`
      width : 300px;
      height : 40px;
-     color : ${props => props.expanded ? props.theme.main : 'white'};
+     color : ${props => props.expanded ? props.theme.main : props.theme.text.main};
      display : flex;
      align-items : center;
      cursor : pointer;
@@ -27,7 +27,7 @@ const Body = styled.div<HeaderProps>`
     max-height : ${props => props.expanded ? '200px' : '0px'};
     transition : max-height 0.4s ease-in, margin 0.4s ease-in, padding 0.4s ease-in;
     overflow : hidden;
-    color : white;
+    color :  ${props => props.theme.text.main};
     margin-bottom : ${props => props.expanded ? '10px' : '0px'};
 `;
 

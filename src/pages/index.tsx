@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useContext, useReducer} from "react";
 import { ThemeProvider } from "styled-components";
 import Header from "../components/Header";
 import * as SC from "../components/Index.styles";
@@ -10,48 +10,60 @@ import Writing from "../components/Writing";
 import Projects from "../components/Projects";
 import FAQ from "../components/FAQ";
 import WhatNow from "../components/WhatNow";
+import { AppStore, LIGHT_THEME, THEME, State, Action, Themes } from "../utils";
+import ThemeToggle from "../components/ThemeToggle";
 
-type Theme = {
-    main : string,
-    secondary : string,
-    text : {
-        main : string,
-        secondary : string
+const initialState = {
+    currentTheme : THEME
+}
+
+const SET_THEME_ACTION = 'gatsby/theme/SET_THEME_ACTION'
+
+const reducer = (state : State, action : Action) : State => {
+    switch(action.type){
+        case SET_THEME_ACTION:{
+            return {...state, currentTheme : action.payload}
+        }
+        default:
+            return state;
     }
-    filler : string
-}
+};
 
-export const mainTheme : Theme = {
-    main : '#F27D42',
-    secondary : '#B12F56',
-    text : {
-        main : '#E1E1E1',
-        secondary : '#C4C4C4'
-    },
-    filler : '#5F5F5F'
-}
 
 const IndexPage = () => {
+    const [state,dispatch] = useReducer(reducer, initialState);
+
+    const toggleTheme = () => {
+        dispatch({
+            type : SET_THEME_ACTION,
+            payload : state.currentTheme.id === Themes.Dark ? LIGHT_THEME : THEME
+
+        })
+    }
+
     return(
-        <ThemeProvider theme={mainTheme}> 
-            <SC.Container>
-                <SC.GlobalStyle/>
-                <Seo title="Robert NC" />
+        <AppStore.Provider value={{state,dispatch}}>
+                <ThemeProvider theme={state.currentTheme}> 
+                <SC.Container>
+                    <SC.GlobalStyle/>
+                    <Seo title="Robert NC" />
 
-                <Header/>
-                <LandingSection/>
-                <AboutMe/>       
-            </SC.Container>
+                    <Header/>
+                    <LandingSection/>
+                    <AboutMe/>       
+                </SC.Container>
 
-            <Services/>  
+                <Services/>  
 
-            <SC.Container>
-              <Writing/>  
-              <Projects/>  
-              <FAQ/> 
-              <WhatNow/>
-            </SC.Container>  
-        </ThemeProvider>
+                <SC.Container>
+                <Writing/>  
+                <Projects/>  
+                <FAQ/> 
+                <WhatNow/>
+                </SC.Container>  
+                <ThemeToggle darkModeOn={state.currentTheme.id === Themes.Dark} toggleTheme={toggleTheme}/>
+            </ThemeProvider>
+        </AppStore.Provider>  
     )
 }
 

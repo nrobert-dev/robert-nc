@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import SwipeableViews from 'react-swipeable-views';
 import { styled } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import {THEME} from "../utils";
+import {AppStore, THEME, useApplicationState} from "../utils";
 
 
 interface TabComponentProps {
@@ -29,12 +29,15 @@ interface StyledTabProps {
 }
 
 
-const StyledTabs = styled((props : StyledTabsProps) => (
+const StyledTabs = styled((props : StyledTabsProps) => 
     <Tabs
       {...props}
       TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
     />
-  ))({
+  )(() => {
+    const {currentTheme} = useApplicationState();
+
+    return({
     '& .MuiTabs-indicator': {
         display: 'flex',
         justifyContent: 'center',
@@ -42,17 +45,21 @@ const StyledTabs = styled((props : StyledTabsProps) => (
       },
     '& .MuiTabs-indicatorSpan': {
         width: '100%',
-        backgroundColor: THEME.secondary
+        backgroundColor: currentTheme.secondary
     },
-  });
+  })});
 const StyledTab = styled((props : StyledTabProps) => <Tab disableRipple {...props} />)(
-    () => ({
-      color: THEME.text.main,
-      fontWeight : 600,
-      '&.Mui-selected': {
-        color: THEME.secondary
-      },
-    }),
+    () => 
+    {
+      const {currentTheme} = useApplicationState();
+      return({
+        color: currentTheme.text.main,
+        fontWeight : 600,
+        '&.Mui-selected': {
+          color: currentTheme.secondary
+        },
+      });
+    }
   );
 
 
@@ -90,14 +97,15 @@ const TabsComponent = (props : TabComponentProps) => {
     const {tabs, tabChildren} = props;
     const [currentTab, setCurrentTab] = useState<number>(0);
 
+
     return(
         <div style={{width : '100%'}}>
                <StyledTabs
-                value={currentTab}
-                onChange={(_ : any, value : number) => setCurrentTab(value)}
-                textColor="inherit"
-                variant="fullWidth"
-                aria-label="full width tabs example"
+                  value={currentTab}
+                  onChange={(_ : any, value : number) => setCurrentTab(value)}
+                  textColor="inherit"
+                  variant="fullWidth"
+                  aria-label="full width tabs example"
             >
                 {tabs.map(t => <StyledTab label={t} {...a11yProps(0)}/>)}
             </StyledTabs>

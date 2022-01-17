@@ -8,12 +8,17 @@ const ArticleWrapper = styled.div`
     width: 278px;
     height: 265px;
 
-    background: #19223C;
+    background: ${props => props.theme.cards.background};
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     position : relative;
 
     padding : 20px 12px;
+    transition : box-shadow 0.2s ease-in;
+
+    &:hover{
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
 
     box-sizing : border-box;
     h5{
