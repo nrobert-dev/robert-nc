@@ -2,6 +2,12 @@ import { Direction, Theme, Themes } from "./types/types"
 
 export const lerp = (x : number, y : number, a : number) : number => x * (1 - a) + y * a;
 
+export const HELPFUL_URLS = {
+    linkedIn : 'https://www.linkedin.com/in/robert-nechitelea/',
+    github : 'https://github.com/nrobert-dev',
+    artstation : 'https://www.artstation.com/thunderent'
+};
+
 export const DARK_THEME : Theme = {
     id : Themes.Dark,
     main : '#F27D42',

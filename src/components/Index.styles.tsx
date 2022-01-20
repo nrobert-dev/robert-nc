@@ -159,6 +159,22 @@ const Rectangle = styled.div<RectProps>`
     right : ${props => props.alignment === 'right' ? 0 : null};
     left : ${props => props.alignment === 'left' ? 0 : null};
 `;
+
+interface FloatingImageWrapperProps{
+    x : number,
+    y : number,
+    top? : string,
+    right? : string,
+    left? : string
+}
+const FloatingImageWrapper = styled.div<FloatingImageWrapperProps>`
+    position : absolute;
+    transform : translate(${({x}) => x}px, ${({y}) => y}px);
+    top : ${({top}) => top};
+    left : ${({left}) => left};
+    right : ${({right}) => right};
+    
+`;
 const Title = styled.h1`
     color : ${props => props.theme.text.main};
     font-size : 56px;
@@ -543,7 +559,8 @@ export {
     AnimationWrapper,
     ProjectImageGradient,
     ProjectImageWrapper,
-    BackgroundStripes
+    BackgroundStripes,
+    FloatingImageWrapper
 }
 
 

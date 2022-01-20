@@ -47,19 +47,47 @@ const LandingSection = () => {
                 <div style={{maxWidth:'38%'}}>
                     <SC.Title>Hello, my</SC.Title>
                     <SC.Title>name is <strong>Robert</strong><span>.</span></SC.Title>
-                    <SC.Description>I am a <strong>full-stack software engineer</strong> living in Romania. I specialize in crafting <strong>dynamic, feature rich Web Experiences.</strong></SC.Description>
+                    <SC.Description>I am a <strong>full-stack software engineer</strong> living in Romania. I specialize in crafting <strong>dynamic, feature-rich Web Experiences.</strong></SC.Description>
                     <SC.ContactMeButton animTriggered={offset > 400}>GET IN TOUCH</SC.ContactMeButton>
                 </div>
-                <div ref={imageRef} style={{width : '62%', display : 'flex', justifyContent : 'center', transform : `perspective(800px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`}}>
+                <div ref={imageRef} style={{position : 'relative', width : '62%', display : 'flex', justifyContent : 'center', transform : `perspective(800px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`}}>
                     <StaticImage  
-                        src="../images/laptop.png"
-                        width={700}
+                        src="../images/landing_computer.png"
+                        width={600}
                         quality={95}
                         formats={["auto", "webp", "avif"]}
                         alt="A Gatsby astronaut"
                     />
+                    <SC.FloatingImageWrapper right='80px' top='100px' x={Math.round(rotationX*2)} y={Math.round(rotationY*2)}>
+                        <StaticImage  
+                                    src="../images/mug.png"
+                                    width={170}
+                                    quality={95}
+                                    formats={["auto", "webp", "avif"]}
+                                    alt="A Gatsby astronaut"/>
+                   
+                    </SC.FloatingImageWrapper>
+                    <SC.FloatingImageWrapper left='80px' top='130px' x={Math.round(rotationX*2)} y={Math.round(rotationY*2)}>
+                        <StaticImage  
+                                    src="../images/bulb.png"
+                                    width={170}
+                                    quality={95}
+                                    formats={["auto", "webp", "avif"]}
+                                    alt="A Gatsby astronaut"/>
+                    </SC.FloatingImageWrapper>
+                    <SC.FloatingImageWrapper left='150px' top='40px' x={Math.round(rotationX*2)} y={Math.round(rotationY*2)}>
+                        <StaticImage  
+                                    src="../images/cube.png"
+                                    width={170}
+                                    quality={95}
+                                    formats={["auto", "webp", "avif"]}
+                                    alt="A Gatsby astronaut"/>
+                    </SC.FloatingImageWrapper>
                 </div>
                 <SC.Rectangle width='70%' alignment='right' style={{transform : `perspective(800px) rotateX(${rotationX*2}deg) rotateY(${rotationY/2}deg)`}}/>
+               
+               
+               
             </SC.Section>
             <SC.Section>
                     <SC.AnimatedSvg animTriggered={offset > 500} width="300" height="120">
