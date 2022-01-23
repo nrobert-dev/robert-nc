@@ -9,7 +9,7 @@ const Services = () => {
                     <SC.ServicesWrapper>
                         <SC.ServiceWrapper>
                             <StaticImage
-                                src="../images/laptop.png"
+                                src="../images/frontendimg.png"
                                 width={400}
                                 quality={95}
                                 formats={["auto", "webp", "avif"]}
@@ -20,18 +20,18 @@ const Services = () => {
                         </SC.ServiceWrapper>
                         <SC.ServiceWrapper>
                             <StaticImage
-                                src="../images/laptop.png"
+                                src="../images/backendservices.png"
                                 width={400}
                                 quality={95}
                                 formats={["auto", "webp", "avif"]}
                                 alt="A Gatsby astronaut"
                             />
-                            <h3>Front End Dev</h3>
+                            <h3>Frontf End Dev</h3>
                             <p>I can help you build your dynamic, performant and modern web applications using the latest tools and technologies in the industry.</p>
                         </SC.ServiceWrapper>
                         <SC.ServiceWrapper>
                             <StaticImage
-                                src="../images/laptop.png"
+                                src="../images/3dservicesimg.png"
                                 width={400}
                                 quality={95}
                                 formats={["auto", "webp", "avif"]}
