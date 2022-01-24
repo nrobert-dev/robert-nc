@@ -84,6 +84,14 @@ const SayHiButton = styled.div<ContactProps>`
 
     transition : color 0.1s ease-in-out, opacity 0.5s ease-in-out;
    
+    a {
+        text-decoration : none;
+        color : ${props => props.theme.main};
+    }
+
+    a:hover{
+        color : ${props => props.theme.secondary};
+    }
 
     svg{
         filter: drop-shadow( 3px 2px 0px ${props => props.theme.secondary});

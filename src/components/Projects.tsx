@@ -1,12 +1,12 @@
 import React from 'react';
 import * as SC from "./Index.styles";
-import { StaticImage } from "gatsby-plugin-image"
 import {DARK_THEME, HELPFUL_URLS} from '../utils';
 import TechTag from './TechTag';
 import IosShare from '@mui/icons-material/IosShare';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { useInView } from 'react-intersection-observer';
 import gif from '../images/blog-gif.gif';
+import gif2 from '../images/pokit-gif.gif';
 
 const Projects = () => {
     const [ref, inView] = useInView({
@@ -58,7 +58,7 @@ const Projects = () => {
                             <SC.ProjectWrapper>
                                 <SC.ProjectImageWrapper>
                                     <SC.ProjectImageGradient/>
-                                    <img src={gif} 
+                                    <img src={gif2} 
                                         alt='A gif of images showing the blog'
                                         style={{
                                             borderRadius : '10px',

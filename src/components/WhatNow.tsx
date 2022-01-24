@@ -1,4 +1,5 @@
 import React from 'react';
+import { HELPFUL_URLS } from '../utils';
 import * as SC from "./Index.styles";
 
 const WhatNow = () => {
@@ -8,7 +9,7 @@ const WhatNow = () => {
                 <h5>What now?</h5>
                 <h1>Let's have a chat!</h1>
             </div>
-            <SC.ContactMeButton href='mailto:robert.nechitelea@gmail.com'>GET IN TOUCH</SC.ContactMeButton>
+            <SC.ContactMeButton href={HELPFUL_URLS.mail}>GET IN TOUCH</SC.ContactMeButton>
         </SC.WhatNowWrapper>
     );
 }

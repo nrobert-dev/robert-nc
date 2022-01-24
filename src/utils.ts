@@ -6,7 +6,8 @@ export const HELPFUL_URLS = {
     linkedIn : 'https://www.linkedin.com/in/robert-nechitelea/',
     github : 'https://github.com/nrobert-dev/',
     artstation : 'https://www.artstation.com/thunderent/',
-    blog : 'https://blog.robertnc.com/'
+    blog : 'https://blog.robertnc.com/',
+    mail : 'mailto:robert.nechitelea@gmail.com'
 };
 
 export const DARK_THEME : Theme = {
