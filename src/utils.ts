@@ -4,8 +4,9 @@ export const lerp = (x : number, y : number, a : number) : number => x * (1 - a)
 
 export const HELPFUL_URLS = {
     linkedIn : 'https://www.linkedin.com/in/robert-nechitelea/',
-    github : 'https://github.com/nrobert-dev',
-    artstation : 'https://www.artstation.com/thunderent'
+    github : 'https://github.com/nrobert-dev/',
+    artstation : 'https://www.artstation.com/thunderent/',
+    blog : 'https://blog.robertnc.com/'
 };
 
 export const DARK_THEME : Theme = {

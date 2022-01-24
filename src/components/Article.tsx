@@ -54,6 +54,15 @@ const IconTag = styled.div<IconTagProps>`
     &:hover{
         color : ${props => props.accessable ? props.theme.text.secondary : props.theme.secondary};
     }
+
+    a {
+        text-decoration : none;
+        color : ${props => props.accessable ? props.theme.text.main : props.theme.secondary};
+    }
+
+    a:hover{
+        color : ${props => props.accessable ? props.theme.text.secondary : props.theme.secondary};
+    }
 `;
 
 interface ArticleProps {
@@ -63,14 +72,16 @@ interface ArticleProps {
     tag : string
 }
 const Article = (props : ArticleProps) => {
-    const {title, description, tag} = props;
+    const {title, description, tag, url} = props;
     return(
-        <ArticleWrapper>
+        <ArticleWrapper onClick={() => window && window.open(url, '_blank')}>
             <IconTag accessable={false} top={'10px'} left={'10px'}>
                 <ArticleIcon fontSize='large'/>
             </IconTag>
             <IconTag accessable={true} top={'12px'} right={'20px'}>
-                <IosShareIcon/>
+                <a href={url}>
+                    <IosShareIcon/>
+                </a> 
             </IconTag>
             <h5>{title}</h5>
             <p>{description}</p>

@@ -194,8 +194,10 @@ const Description = styled.h4`
     font-weight : 300;
 `;
 
-const ContactMeButton = styled.div<ContactProps>`
+const ContactMeButton = styled.a<ContactProps>`
     height : ${props => props.animTriggered ? '2px' : '46px'};
+    text-decoration : none;
+    display : block;
     overflow : hidden;
     width : 200px;
     text-align : center;
@@ -374,10 +376,11 @@ const ServiceWrapper = styled.div`
     flex-direction : column;
 
     h3 {    
-        font-size : 18px;
+        font-size : 19px;
         font-weight : 500px;
         text-align : center;
         width : 100%;
+        color : ${props => props.theme.secondary};
     }
 `;
 
@@ -446,6 +449,15 @@ const VisitProject = styled.div`
             color : ${props => props.theme.text.secondary};
         }
     }
+
+    a {
+        color : ${props => props.theme.secondary};
+        text-decoration : none; 
+    }
+
+    a:hover{
+        color : ${props => props.theme.text.secondary};
+    }
   
 `;
 
@@ -461,6 +473,10 @@ const ProjectImageWrapper = styled.div`
                 opacity : 0.2;
             }
           }
+    }
+
+    img {
+        max-width : 100%;
     }
 `;
 
@@ -520,8 +536,15 @@ export const WhatNowWrapper = styled.section`
     }
 `;
 
+const Hyperlink = styled.a`
+    color : ${props => props.theme.secondary};
+    font-weight : 500;
+    margin : 0px 4px;
+`;
+
 
 export {
+    Hyperlink,
     NavLine,
     NavGroup,
     NavItem,

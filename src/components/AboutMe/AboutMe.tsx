@@ -11,12 +11,12 @@ import * as SCC from './AboutMe.styles';
 import { useInView } from 'react-intersection-observer';
 
 const technologies : string[] = [
+    "Javascript",
     "Typescript",
     "React",
     "Redux",
     "Redux-Saga",
     "D3",
-    "Vue",
     "Webpack",
     "NodeJS",
     ".NET",
@@ -41,12 +41,12 @@ const AboutMe = () => {
     });
 
     return(
-        <SCC.AboutMeWrapper ref={ref} triggered={inView}>
+        <SCC.AboutMeWrapper ref={ref} triggered={inView} id='about'>
             <div style={{width : '100%',  display : 'flex', flexDirection : 'row', position : 'relative'}}>
                     <div style={{width : '50%', display : 'flex'}}>
                         <StaticImage
                             src="../../images/person.png"
-                            width={600}
+                            width={500}
                             quality={95}
                             formats={["auto", "webp", "avif"]}
                             alt="A Gatsby astronaut"
@@ -61,17 +61,20 @@ const AboutMe = () => {
                         <div>           
                             <SC.SectionText>
                                 <p>
-                                I am a software developer with over 4 years of experience building various web applications, data analytics visualisations, 
-                                dashboards and component libraries for the web. 
-                                This variety has taught me a few tips and tricks that I can use to improve the web experience. 
+                                    I am a <strong>Software Developer</strong> with over <strong>4 years</strong> of experience building various web applications, data analytics visualisations, 
+                                    dashboards and component libraries for the web. 
                                 </p>
                                 <p>
-                                Lorem ipsum dolor sit amet. Habemus igitur nos adios guru tamas lego mego ergo situ sum bar.
-                                My experience is within the following:            
-                                </p>                                                     
+                                    I am enthusiastic, hard-working and curious about the world around me. 
+                                    I don't give up easily and I know where and how to look for solutions when problems arise. 
+                                    I've always had a strong passion to create things and I constantly challenge myself to get better along the way.    
+                                </p>    
+                                <p>
+                                    My professional experience:
+                                </p>                                                 
                             </SC.SectionText>
                         
-                            <SC.AnimationWrapper triggered={inViewText} ref={refText}>
+                            <SC.AnimationWrapper style={{height : '350px'}} triggered={inViewText} ref={refText}>
                                 <Tabs tabs={["@Technical Lead", "@Full Stack Developer", "@Others"]}
                                     tabChildren={
                                         [
@@ -80,15 +83,38 @@ const AboutMe = () => {
                                                     @Toluna Corporate - Current
                                                 </SC.MainPosition>
                                                 <SC.BulletList>
-                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Development using React and Redux</li>
-                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Development using React and Redux</li>
-                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Development using React and Redux</li>
-                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Development using React and Redux</li>
-                                                    
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Development using React, Redux, NodeJS</li>
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Handle front-end project deployments using Microsoft Azure</li>
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Plan infrastructure and architecture for each project based on client's specs and requirements</li>
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Perform regular code reviews and engage developers in the code review process</li>
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Offer mentoring and support to team members and handle training of new joiners</li>
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Lead the development on internal reusable tools and libraries</li>
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Internal tools back-end development</li>
                                                 </SC.BulletList>
                                             </SC.TabContentWrapper>,
-                                            <span>2</span>,
-                                            <span>3</span>            
+                                              <SC.TabContentWrapper>
+                                              <SC.MainPosition>
+                                                  @Toluna Corporate - Nov 2018 until July 2020
+                                              </SC.MainPosition>
+                                              <SC.BulletList>
+                                                  <li><PanoramaFishEyeIcon fontSize='small'/>Front-end development using React, Redux on dashboards, component libraries and internal tools</li>
+                                                  <li><PanoramaFishEyeIcon fontSize='small'/>Internal tools back-end development using : ASP.NET C# and Microsoft SQL </li>
+                                                  <li><PanoramaFishEyeIcon fontSize='small'/>Full Stack development for various Toluna products</li>
+      
+                                              </SC.BulletList>
+                                          </SC.TabContentWrapper>,
+                                          <SC.TabContentWrapper>
+                                             <SC.MainPosition>
+                                                 @Other Work
+                                             </SC.MainPosition>
+                                             <SC.BulletList>
+                                                 <li><PanoramaFishEyeIcon fontSize='small'/>Internship at Nokia where I helped develop an internal mailing system based on events</li>
+                                                 <li><PanoramaFishEyeIcon fontSize='small'/>Internship at Haufe Group where I helped develop a mobile application for keeping track of meeting room availability</li>
+                                                 <li><PanoramaFishEyeIcon fontSize='small'/>Freelancer offering 3D modelling services for various video games</li>
+                                                 <li><PanoramaFishEyeIcon fontSize='small'/>Worked as a 3D Artist for a mobile game, <SC.Hyperlink href='https://play.google.com/store/apps/details?id=com.twotwou.MerchantRun&hl=ro&gl=US'> Merchant Run</SC.Hyperlink> </li>
+                                                 <li><PanoramaFishEyeIcon fontSize='small'/>Indie game developer for  <SC.Hyperlink href='https://thunderent.itch.io/dream-of-me'> Dream of Me</SC.Hyperlink> </li>
+                                             </SC.BulletList>
+                                         </SC.TabContentWrapper>            
                                         ]
                                     }/>
                             </SC.AnimationWrapper>

@@ -48,7 +48,7 @@ const LandingSection = () => {
                     <SC.Title>Hello, my</SC.Title>
                     <SC.Title>name is <strong>Robert</strong><span>.</span></SC.Title>
                     <SC.Description>I am a <strong>full-stack software engineer</strong> living in Romania. I specialize in crafting <strong>dynamic, feature-rich Web Experiences.</strong></SC.Description>
-                    <SC.ContactMeButton animTriggered={offset > 400}>GET IN TOUCH</SC.ContactMeButton>
+                    <SC.ContactMeButton href='mailto:robert.nechitelea@gmail.com' animTriggered={offset > 400}>GET IN TOUCH</SC.ContactMeButton>
                 </div>
                 <div ref={imageRef} style={{position : 'relative', width : '62%', display : 'flex', justifyContent : 'center', transform : `perspective(800px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`}}>
                     <StaticImage  

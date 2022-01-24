@@ -32,6 +32,14 @@ const IconWrapper=styled(ToggleWrapper)`
     &:hover{
         border : none;
     }
+
+    a {
+        color : ${props => props.theme.secondary};
+    }
+
+    a:hover{
+        color : ${props => props.theme.main};
+    }
 `;
 
 const SideItems = styled.div`
@@ -56,14 +64,20 @@ interface ThemeProps {
 const ThemeToggle = ({darkModeOn, toggleTheme} : ThemeProps) => {
     return(
         <SideItems>
-            <IconWrapper onClick={()=> window && window.open(HELPFUL_URLS.artstation, "_blank")}>
-                <ViewInArIcon fontSize='medium'/>
+            <IconWrapper>
+                <a href={HELPFUL_URLS.artstation} target={'_blank'}>
+                    <ViewInArIcon fontSize='medium'/>
+                </a> 
             </IconWrapper>
-            <IconWrapper onClick={()=> window && window.open(HELPFUL_URLS.github, "_blank")}>  
-                <GitHubIcon fontSize='medium'/>    
+            <IconWrapper>  
+                <a href={HELPFUL_URLS.github} target={'_blank'}>
+                    <GitHubIcon fontSize='medium'/>    
+                </a>
             </IconWrapper>
-             <IconWrapper onClick={()=> window && window.open(HELPFUL_URLS.linkedIn, "_blank")}> 
-                <LinkedInIcon fontSize='medium'/>
+             <IconWrapper> 
+                <a href={HELPFUL_URLS.linkedIn} target={'_blank'}>
+                    <LinkedInIcon fontSize='medium'/>
+                </a> 
             </IconWrapper>
             <ToggleWrapper onClick={() => toggleTheme()}>
                 {darkModeOn ? <DarkModeIcon fontSize='medium'/> : <WbSunnyIcon fontSize='medium'/>}

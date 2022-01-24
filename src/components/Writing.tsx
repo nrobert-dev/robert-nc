@@ -1,9 +1,10 @@
 import React, { useEffect, useState} from 'react';
 import * as SC from "./Index.styles";
-import {DARK_THEME} from '../utils';
+import {DARK_THEME, HELPFUL_URLS} from '../utils';
 import Article from "../components/Article";
 import { useInView } from 'react-intersection-observer';
 import firebase from "gatsby-plugin-firebase";
+
 
 interface Post {
     title : string,
@@ -40,7 +41,7 @@ const Writing = () => {
     },[]);
 
     return(
-        <SC.AnimationWrapper ref={ref} triggered={inView} style={{margin : '200px 0px'}} direction='x'>
+        <SC.AnimationWrapper ref={ref} triggered={inView} style={{margin : '200px 0px'}} direction='x' id='blog'>
             <div style={{width : '100%',  display : 'flex', justifyContent : 'flex-end'}}>
                         <SC.InfoHeaderWrapper style={{width : '50%', float : 'right'}}>
                             <SC.SectionTitle> <span style={{color : DARK_THEME.text.main}}>02.</span> Latest Posts<span>.</span></SC.SectionTitle>
@@ -53,6 +54,7 @@ const Writing = () => {
                     {posts.map((post : Post,index : number) =>    
                     <SC.AnimationWrapper triggered={inView} delay={100*(index+2)+'ms'}>
                         <Article tag={post.tag}
+                            url={HELPFUL_URLS.blog+'article/'+post.id}
                             title={post.title}
                             description={post.description}/>
                     </SC.AnimationWrapper>)}

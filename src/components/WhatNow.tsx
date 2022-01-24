@@ -8,7 +8,7 @@ const WhatNow = () => {
                 <h5>What now?</h5>
                 <h1>Let's have a chat!</h1>
             </div>
-            <SC.ContactMeButton>GET IN TOUCH</SC.ContactMeButton>
+            <SC.ContactMeButton href='mailto:robert.nechitelea@gmail.com'>GET IN TOUCH</SC.ContactMeButton>
         </SC.WhatNowWrapper>
     );
 }
