@@ -6,6 +6,8 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import { HELPFUL_URLS } from '../utils';
+import Tooltip from '@mui/material/Tooltip';
+import LightTooltip from './CustomTooltip';
 
 const ToggleWrapper = styled.div`
     border : 2px solid ${props => props.theme.secondary};
@@ -61,26 +63,37 @@ interface ThemeProps {
     toggleTheme : () => void
 }
 
+
 const ThemeToggle = ({darkModeOn, toggleTheme} : ThemeProps) => {
     return(
         <SideItems>
             <IconWrapper>
                 <a href={HELPFUL_URLS.artstation} target={'_blank'}>
-                    <ViewInArIcon fontSize='medium'/>
+                    <LightTooltip placement="left-start" title='Art Station'>
+                        <ViewInArIcon fontSize='medium'/>
+                    </LightTooltip>
+                 
                 </a> 
             </IconWrapper>
             <IconWrapper>  
                 <a href={HELPFUL_URLS.github} target={'_blank'}>
-                    <GitHubIcon fontSize='medium'/>    
+                    <LightTooltip placement="left-start" title='Github'>
+                        <GitHubIcon fontSize='medium'/>  
+                    </LightTooltip>
+                     
                 </a>
             </IconWrapper>
              <IconWrapper> 
                 <a href={HELPFUL_URLS.linkedIn} target={'_blank'}>
-                    <LinkedInIcon fontSize='medium'/>
+                    <LightTooltip placement="left-start" title='LinkedIn'>
+                        <LinkedInIcon fontSize='medium'/>
+                    </LightTooltip>   
                 </a> 
             </IconWrapper>
             <ToggleWrapper onClick={() => toggleTheme()}>
-                {darkModeOn ? <DarkModeIcon fontSize='medium'/> : <WbSunnyIcon fontSize='medium'/>}
+                    <LightTooltip placement="left-start" title='Theme Toggle'>
+                        {darkModeOn ? <DarkModeIcon fontSize='medium'/> : <WbSunnyIcon fontSize='medium'/>}
+                    </LightTooltip>   
             </ToggleWrapper>    
         </SideItems>      
     )

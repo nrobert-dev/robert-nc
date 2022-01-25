@@ -123,6 +123,22 @@ const Section = styled.section`
     align-items : center;
     justify-content : space-between;
     margin : 60px 0px;
+
+    @media only screen and (max-width: 600px) {
+        flex-direction : column;
+    }
+    @media only screen and (min-width: 600px) {
+        flex-direction : column;
+    }
+    @media only screen and (min-width: 768px) {
+        flex-direction : column;
+    }
+    @media only screen and (min-width: 992px) {
+        flex-direction : column;
+    }
+    @media only screen and (min-width: 1200px) {
+        flex-direction : row;
+    }
 `;
 
 interface RectProps {
@@ -166,6 +182,31 @@ const Rectangle = styled.div<RectProps>`
     transform: translateY(-50%);
     right : ${props => props.alignment === 'right' ? 0 : null};
     left : ${props => props.alignment === 'left' ? 0 : null};
+
+    @media only screen and (min-width: 600px) {
+        right : ${null};
+        left : ${null};
+        width : 100%;
+        height : 280px;
+    }
+    @media only screen and (min-width: 768px) {
+        right : ${null};
+        left : ${null};
+        width : 100%;
+        height : 280px;
+    }
+    @media only screen and (min-width: 992px) {
+        right : ${null};
+        left : ${null};
+        width : 100%;
+        height : 280px;
+    }
+    @media only screen and (min-width: 1200px) {
+        right : ${props => props.alignment === 'right' ? 0 : null};
+        left : ${props => props.alignment === 'left' ? 0 : null};
+        height : 300px;
+        width : ${props => props.width};
+    }
 `;
 
 interface FloatingImageWrapperProps{
@@ -195,11 +236,43 @@ const Title = styled.h1`
     strong {
         color : ${props => props.theme.main};
     }
+
+    @media only screen and (max-width: 600px) {
+        font-size : 39px;
+    }
+    @media only screen and (min-width: 600px) {
+        font-size : 40px;
+    }
+    @media only screen and (min-width: 768px) {
+        font-size : 48px;
+    }
+    @media only screen and (min-width: 992px) {
+        font-size : 50px;
+    }
+    @media only screen and (min-width: 1200px) {
+        font-size : 56px;
+    }
 `;
 const Description = styled.h4`
     color : ${props => props.theme.text.main};
     font-size : 22px;
     font-weight : 300;
+
+    @media only screen and (max-width: 600px) {
+        font-size : 17px;  
+    }
+    @media only screen and (min-width: 600px) {
+        font-size : 18px;
+    }
+    @media only screen and (min-width: 768px) {
+        font-size : 20px;
+    }
+    @media only screen and (min-width: 992px) {
+        font-size : 22px;
+    }
+    @media only screen and (min-width: 1200px) {
+        font-size : 22px;
+    }
 `;
 
 const ContactMeButton = styled.a<ContactProps>`
@@ -228,6 +301,14 @@ const ContactMeButton = styled.a<ContactProps>`
     &:active{
         box-shadow: #19223C 0px 0px 0px 0px inset, ${props => props.theme.backgroundSet.start} 2px 4px 0px -3px, #19223C 2px 4px; 
     }
+
+    @media only screen and (max-width: 600px) {
+        margin-top : 40px 0px;
+    }
+    @media only screen and (min-width: 600px) {
+        margin-top : 40px 0px;
+    }
+ 
 `;
 
 const AnimatedSvg = styled.svg<ContactProps>`
@@ -353,8 +434,15 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Container = styled.div`
-    max-width : 1310px;
     margin : 0 auto;
+
+    @media screen and (min-device-width: 1200px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 1) { 
+        max-width : 1310px;
+    }
+
+    @media screen and (min-device-width: 900px) and (max-device-width: 1199px) and (-webkit-min-device-pixel-ratio: 1) { 
+        max-width : 810px; 
+    }
 `;
 
 /* Services Section */
@@ -550,6 +638,24 @@ const Hyperlink = styled.a`
     margin : 0px 4px;
 `;
 
+const LandingPageTextWrapper = styled.div`
+    @media only screen and (max-width: 600px) {
+        max-width : 88%;
+    }
+    @media only screen and (min-width: 600px) {
+        max-width : 88%;
+    }
+    @media only screen and (min-width: 768px) {
+        max-width : 88%;
+    }
+    @media only screen and (min-width: 992px) {
+        max-width : 88%;
+    }
+    @media only screen and (min-width: 1200px) {
+        max-width : 38%;
+    }
+`;
+
 
 export {
     Hyperlink,
@@ -591,7 +697,8 @@ export {
     ProjectImageGradient,
     ProjectImageWrapper,
     BackgroundStripes,
-    FloatingImageWrapper
+    FloatingImageWrapper,
+    LandingPageTextWrapper
 }
 
 

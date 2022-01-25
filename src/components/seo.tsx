@@ -9,13 +9,14 @@ import * as React from "react"
 import PropTypes from "prop-types"
 // @ts-ignore
 import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
+import metaimage from "../images/metaimage.jpg";
 
 interface MetaData {
   description : string
   lang : string,
   meta : any[],
-  title : string
+  title : string,
 }
 function Seo({ description, lang, meta, title } : MetaData) {
   const { site } = useStaticQuery(
@@ -58,6 +59,10 @@ function Seo({ description, lang, meta, title } : MetaData) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property : 'og:image',
+          content : metaimage
         },
         {
           name: `twitter:card`,
