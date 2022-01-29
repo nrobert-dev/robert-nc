@@ -3,7 +3,7 @@ import * as SC from "./Index.styles";
 import { StaticImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentAlt } from '@fortawesome/free-solid-svg-icons'
-import { useOffset } from '../hooks';
+import { useOffset, useWindowSize } from '../hooks';
 import { HELPFUL_URLS } from '../utils';
 
 
@@ -11,6 +11,9 @@ const LandingSection = () => {
     const [rotationX, setRotationX] = useState(0);
     const [rotationY, setRotationY] = useState(0);
     const [offset] = useOffset();
+
+    const {width} = useWindowSize();
+
 
     const imageRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -61,31 +64,33 @@ const LandingSection = () => {
                         formats={["auto", "webp", "avif"]}
                         alt="A Gatsby astronaut"
                     />
-                    <SC.FloatingImageWrapper right='80px' top='100px' x={Math.round(rotationX*2)} y={Math.round(rotationY*2)}>
-                        <StaticImage  
-                                    src="../images/mug.png"
-                                    width={170}
-                                    quality={95}
-                                    formats={["auto", "webp", "avif"]}
-                                    alt="A Gatsby astronaut"/>
-                   
-                    </SC.FloatingImageWrapper>
-                    <SC.FloatingImageWrapper left='80px' top='130px' x={Math.round(rotationX*2)} y={Math.round(rotationY*2)}>
-                        <StaticImage  
-                                    src="../images/bulb.png"
-                                    width={170}
-                                    quality={95}
-                                    formats={["auto", "webp", "avif"]}
-                                    alt="A Gatsby astronaut"/>
-                    </SC.FloatingImageWrapper>
-                    <SC.FloatingImageWrapper left='150px' top='40px' x={Math.round(rotationX*2)} y={Math.round(rotationY*2)}>
-                        <StaticImage  
-                                    src="../images/cube.png"
-                                    width={170}
-                                    quality={95}
-                                    formats={["auto", "webp", "avif"]}
-                                    alt="A Gatsby astronaut"/>
-                    </SC.FloatingImageWrapper>
+                    {width && width > 1000 && <>
+                        <SC.FloatingImageWrapper right='80px' top='100px' x={Math.round(rotationX*2)} y={Math.round(rotationY*2)}>
+                            <StaticImage  
+                                        src="../images/mug.png"
+                                        width={170}
+                                        quality={95}
+                                        formats={["auto", "webp", "avif"]}
+                                        alt="A Gatsby astronaut"/>
+                    
+                        </SC.FloatingImageWrapper>
+                        <SC.FloatingImageWrapper left='80px' top='130px' x={Math.round(rotationX*2)} y={Math.round(rotationY*2)}>
+                            <StaticImage  
+                                        src="../images/bulb.png"
+                                        width={170}
+                                        quality={95}
+                                        formats={["auto", "webp", "avif"]}
+                                        alt="A Gatsby astronaut"/>
+                        </SC.FloatingImageWrapper>
+                        <SC.FloatingImageWrapper left='150px' top='40px' x={Math.round(rotationX*2)} y={Math.round(rotationY*2)}>
+                            <StaticImage  
+                                        src="../images/cube.png"
+                                        width={170}
+                                        quality={95}
+                                        formats={["auto", "webp", "avif"]}
+                                        alt="A Gatsby astronaut"/>
+                        </SC.FloatingImageWrapper>
+                    </>}
                 </div>
                 <SC.Rectangle width='70%' alignment='right' style={{transform : `perspective(800px) rotateX(${rotationX*2}deg) rotateY(${rotationY/2}deg)`}}/>
                

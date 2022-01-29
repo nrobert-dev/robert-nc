@@ -12,6 +12,7 @@ const ArticleWrapper = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     position : relative;
+    margin : 12px 0px;
 
     padding : 20px 12px;
     transition : box-shadow 0.2s ease-in;

@@ -9,6 +9,7 @@ import Tooltip from '@mui/material/Tooltip';
 import HelpIcon from '@mui/icons-material/Help';
 import * as SCC from './AboutMe.styles';
 import { useInView } from 'react-intersection-observer';
+import { useWindowSize } from '../../hooks';
 
 const technologies : string[] = [
     "Javascript",
@@ -40,10 +41,12 @@ const AboutMe = () => {
         rootMargin: '-190px 0px',
     });
 
+    const {width} = useWindowSize();
+
     return(
         <SCC.AboutMeWrapper ref={ref} triggered={inView} id='about'>
-            <div style={{width : '100%',  display : 'flex', flexDirection : 'row', position : 'relative'}}>
-                    <div style={{width : '50%', display : 'flex'}}>
+            <SCC.AboutMeContaienr>
+                    <div className='about-me-image' style={{display : 'flex'}}>
                         <StaticImage
                             src="../../images/person.png"
                             width={500}
@@ -52,8 +55,8 @@ const AboutMe = () => {
                             alt="A Gatsby astronaut"
                         />
                     </div>
-                    <div style={{width : '50%'}}>
-                        <SC.InfoHeaderWrapper>
+                    <div className='about-me-text'>
+                        <SC.InfoHeaderWrapper style={{width : '100%'}}>
                             <SC.SectionTitle> <span style={{color : DARK_THEME.text.main}}>00.</span> About Me<span>.</span></SC.SectionTitle>
                             <SC.SectionHeaderDelimiterCircle/>
                             <SC.SectionHeaderDelimiterLine/>
@@ -121,16 +124,18 @@ const AboutMe = () => {
                           
                         </div>
                     </div>
-                    <SC.Rectangle width='40%' alignment='left'/>
-                </div> 
+                    {width && width > 1200 && <SC.Rectangle width='40%' alignment='left'/>}
+                </SCC.AboutMeContaienr> 
                 <SC.AnimationWrapper ref={refTech} triggered={inViewTech} direction='x'>
-                        <SC.TechStackTitle>Technologies I work with 
+                        <SCC.TechTagResponsiveWrapper>
+                            <SC.TechStackTitle>Technologies I work with 
                             <Tooltip 
                                 title="If you're not a developer and don't know what these mean, don't worry. I can guide you through it. 
                                 I always keep up to date with the latest tools and advancements in the industry so that your business or projects can have the best technology stack.">
                                 <HelpIcon fontSize="small"/>
                             </Tooltip></SC.TechStackTitle>
-                        {technologies.map(tech => <TechTag title={tech}/>)}
+                            {technologies.map(tech => <TechTag title={tech}/>)}
+                        </SCC.TechTagResponsiveWrapper>           
                 </SC.AnimationWrapper>
         </SCC.AboutMeWrapper>
     )

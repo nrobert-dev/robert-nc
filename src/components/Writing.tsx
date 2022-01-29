@@ -42,13 +42,13 @@ const Writing = () => {
 
     return(
         <SC.AnimationWrapper ref={ref} triggered={inView} style={{margin : '200px 0px'}} direction='x' id='blog'>
-            <div style={{width : '100%',  display : 'flex', justifyContent : 'flex-end'}}>
-                        <SC.InfoHeaderWrapper style={{width : '50%', float : 'right'}}>
+            <SC.WritingTitleWrapper>
+                        <SC.InfoHeaderWrapper style={{float : 'right'}}>
                             <SC.SectionTitle> <span style={{color : DARK_THEME.text.main}}>02.</span> Latest Posts<span>.</span></SC.SectionTitle>
                             <SC.SectionHeaderDelimiterCircle/>
                             <SC.SectionHeaderDelimiterLine/>
                         </SC.InfoHeaderWrapper>
-            </div>
+            </SC.WritingTitleWrapper>
             <SC.ArticlesWrapper>
                     {posts.length === 0 ? <p>Oops, something went wrong and no data could be loaded.</p> : null}
                     {posts.map((post : Post,index : number) =>    

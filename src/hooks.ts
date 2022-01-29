@@ -16,6 +16,30 @@ export const useOffset = () => {
     return [offset,setOffset];
 }
 
+export const useWindowSize = () => {
+    const [windowSize, setWindowSize] = useState<{width : number | undefined, height : number | undefined}>({
+      width: undefined,
+      height: undefined,
+    });
+  
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+  
+    
+      window.addEventListener("resize", handleResize);
+      handleResize();
+  
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+  
+    return windowSize;
+  };
+
 
 export const AppStore = React.createContext<Context | null>(null);
 export const useApplicationState = () => {

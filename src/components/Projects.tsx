@@ -15,13 +15,13 @@ const Projects = () => {
     });
     return(
         <SC.AnimationWrapper ref={ref} style={{margin : '100px 0px'}} triggered={inView} id='projects'>
-                    <div style={{width : '100%',  display : 'flex'}}>
-                                <SC.InfoHeaderWrapper style={{width : '50%', float : 'right'}}>
+                    <SC.WritingTitleWrapper >
+                                <SC.InfoHeaderWrapper style={{float : 'right'}}>
                                     <SC.SectionTitle> <span style={{color : DARK_THEME.text.main}}>03.</span> Projects<span>.</span></SC.SectionTitle>
                                     <SC.SectionHeaderDelimiterCircle/>
                                     <SC.SectionHeaderDelimiterLine/>
                                 </SC.InfoHeaderWrapper>
-                    </div>
+                    </SC.WritingTitleWrapper>
                     <SC.ProjectsWrapper>
                         <SC.AnimationWrapper triggered={inView} direction='x' delay='600ms'>
                             <SC.ProjectWrapper>

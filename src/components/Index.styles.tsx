@@ -183,7 +183,7 @@ const Rectangle = styled.div<RectProps>`
     right : ${props => props.alignment === 'right' ? 0 : null};
     left : ${props => props.alignment === 'left' ? 0 : null};
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 400px) {
         right : ${null};
         left : ${null};
         width : 100%;
@@ -335,11 +335,23 @@ const InfoWrapper = styled.div`
     min-width : 650px;
 `
 
+const WritingTitleWrapper = styled.div`
+    width : 100%;
+    display : flex;
+
+    @media only screen and (min-width: 400px) {
+        justify-content : center;
+    }
+    @media only screen and (min-width: 1200px) {
+        justify-content : flex-end;
+    } 
+`;
 const InfoHeaderWrapper = styled.div`
     display : flex;
     flex-direction : row;
     align-items : center;
     margin-bottom : 37px;
+    width : 80%;
 `;
 
 const SectionTitle = styled.div`
@@ -435,14 +447,20 @@ const GlobalStyle = createGlobalStyle`
 
 const Container = styled.div`
     margin : 0 auto;
+    max-width : 1310px;
 
-    @media screen and (min-device-width: 1200px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 1) { 
+    @media only screen and (min-width: 400px) {
+        max-width : 600px;
+    }
+    @media only screen and (min-width: 768px) {
+        max-width : 700px;
+    }
+    @media only screen and (min-width: 992px) {
+        max-width : 890px;
+    }
+    @media only screen and (min-width: 1200px) {
         max-width : 1310px;
-    }
-
-    @media screen and (min-device-width: 900px) and (max-device-width: 1199px) and (-webkit-min-device-pixel-ratio: 1) { 
-        max-width : 810px; 
-    }
+    } 
 `;
 
 /* Services Section */
@@ -463,7 +481,21 @@ const ServicesWrapper = styled.div`
     display : flex;
     justify-content : space-evenly;
     align-items : center;
+
+    @media only screen and (min-width: 400px) {
+      flex-direction : column;
+    }
+    @media only screen and (min-width: 768px) {
+        flex-direction : column;
+    }
+    @media only screen and (min-width: 992px) {
+        flex-direction : row;
+    }
+    @media only screen and (min-width: 1200px) {
+        flex-direction : row;
+    } 
 `;
+
 
 const ServiceWrapper = styled.div`
     max-width : 350px;
@@ -487,6 +519,9 @@ const ArticlesWrapper = styled.section`
     flex-direction : row;
     justify-content : space-evenly;
     margin-top : 10px;
+    flex-wrap : wrap;
+
+   
     
     p {
         color : ${props => props.theme.text.secondary};
@@ -495,16 +530,33 @@ const ArticlesWrapper = styled.section`
 
 /* Project */
 const ProjectsWrapper = styled.section`
-    width : 100%;
+    width : 80%;
     display : flex;
     justify-content : center;
     flex-direction : column;
+    margin : 0 auto;
+
+    @media only screen and (min-width: 400px) {
+       align-items : center;
+    }
+    @media only screen and (min-width: 1200px) {
+        align-items : none;
+    } 
 `;
 
 const ProjectWrapper = styled.div`
     display : flex;
     flex-direction : row;
     margin-bottom : 49px;
+
+    @media only screen and (min-width: 400px) {
+        flex-direction : column-reverse;
+        align-items : center;
+    }
+    @media only screen and (min-width: 1300px) {
+        flex-direction : row;
+    } 
+
 `;
 
 const DescriptionWrapper = styled.div`
@@ -563,6 +615,19 @@ const ProjectImageWrapper = styled.div`
     box-shadow: rgba(0, 0, 0, 0.85) 0px 5px 15px;
     border-radius : 10px;
 
+    @media only screen and (min-width: 400px) {
+        width : 340px;
+    }
+    @media only screen and (min-width: 768px) {
+        width : 660px;
+    }
+    @media only screen and (min-width: 992px) {
+        width : 600px;
+    }
+    @media only screen and (min-width: 1200px) {
+        width : 1000px;
+    } 
+
     &:hover{
         > * {
             &:first-child {
@@ -594,6 +659,7 @@ const FAQContainer = styled.section`
     justify-content : center;
     flex-direction : column;
     align-items : center;
+    flex-wrap : wrap;
 
     h4{
         grid-area : hd;
@@ -603,7 +669,7 @@ const FAQContainer = styled.section`
     }
 `;
 const FAQWrapper = styled.div`
-    width : 800px;
+    max-width : 800px;
     display : flex;
     justify-content : space-around;
     flex-direction : row;
@@ -698,7 +764,8 @@ export {
     ProjectImageWrapper,
     BackgroundStripes,
     FloatingImageWrapper,
-    LandingPageTextWrapper
+    LandingPageTextWrapper,
+    WritingTitleWrapper
 }
 
 
