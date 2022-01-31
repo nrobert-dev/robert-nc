@@ -43,17 +43,17 @@ const LandingSection = () => {
 
     return(
         <>
-            <SC.Section ref={containerRef}>
+            <SC.Section ref={containerRef} style={{marginTop : '60px'}}>
                 <SC.SayHiButton animTriggered={offset > 400}>
                     <a href={HELPFUL_URLS.mail}>
-                        <FontAwesomeIcon icon={faCommentAlt}/> Say Hi!
+                        <FontAwesomeIcon icon={faCommentAlt}/> {width && width > 700 && 'Say Hi!'}
                     </a>
                 </SC.SayHiButton>
                             
                 <SC.LandingPageTextWrapper>
                     <SC.Title>Hello, my</SC.Title>
                     <SC.Title>name is <strong>Robert</strong><span>.</span></SC.Title>
-                    <SC.Description>I am a <strong>full-stack software engineer</strong> living in Romania. I specialize in crafting <strong>dynamic, feature-rich Web Experiences.</strong></SC.Description>
+                    <SC.Description>I am a <strong>Software Engineer</strong> living in Romania. I specialize in crafting <strong>dynamic, feature-rich Web Experiences.</strong></SC.Description>
                     <SC.ContactMeButton href={HELPFUL_URLS.mail} animTriggered={offset > 400}>GET IN TOUCH</SC.ContactMeButton>
                 </SC.LandingPageTextWrapper>
                 <div ref={imageRef} style={{position : 'relative', width : '62%', display : 'flex', justifyContent : 'center', transform : `perspective(800px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`}}>

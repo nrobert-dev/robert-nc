@@ -16,6 +16,7 @@ import { AppStore, useOffset } from "../hooks"
 import { Themes, Action } from "../types/types"
 import { initialState, rootReducer } from "../data/reducer"
 import { setThemeActionCreator } from "../data/actions"
+import Sidebar from "../components/Sidebar";
 
 
 
@@ -31,11 +32,13 @@ const IndexPage = () => {
     return(
         <AppStore.Provider value={{state,dispatch}}>
                 <ThemeProvider theme={state.currentTheme}> 
+                <Sidebar/>
                 <SC.Container>
                     <SC.GlobalStyle/>
                     <Seo title="Robert NC" />
 
                     <Header/>
+
                     <LandingSection/>
                     <AboutMe/>       
                 </SC.Container>

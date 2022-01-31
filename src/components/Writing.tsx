@@ -59,6 +59,7 @@ const Writing = () => {
                             description={post.description}/>
                     </SC.AnimationWrapper>)}
             </SC.ArticlesWrapper>
+            <SC.MoreLink> <a href={HELPFUL_URLS.blog} target={'_blank'}>See More >></a></SC.MoreLink>
         </SC.AnimationWrapper>
     )
 };

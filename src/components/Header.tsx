@@ -1,13 +1,10 @@
 import React from 'react';
-import { useOffset } from '../hooks';
+import { useOffset, useWindowSize } from '../hooks';
 import * as SC from './Index.styles';
+import {NavItem} from "../types/types";
 
-interface NavItem {
-    title : String,
-    path : String
-};
 
-const navItems : NavItem[] = [
+export const navItems : NavItem[] = [
     {
         title : 'About',
         path : 'about'
@@ -33,9 +30,10 @@ const navItems : NavItem[] = [
 
 const Header = () => {
     const [offset] = useOffset();
+    const {width} = useWindowSize();
 
     return(
-        <SC.HeaderContainer animTriggered={offset > 3}>
+        width && width > 768 ? <SC.HeaderContainer animTriggered={offset > 3}>
             <SC.NavGroup>
                 {navItems.map((element,index) => 
                 <SC.NavItem onClick={() => window.location.replace('/#'+element.path)}>
@@ -44,7 +42,7 @@ const Header = () => {
                     <SC.NavLine/>
                 </SC.NavItem>)}
             </SC.NavGroup>
-        </SC.HeaderContainer>
+        </SC.HeaderContainer> : null
     );
 }
 

@@ -32,7 +32,7 @@ export const DARK_THEME : Theme = {
 export const LIGHT_THEME : Theme = {
     id : Themes.Light,
     main : '#AADCEC',
-    secondary : '#8814E2',
+    secondary : '#7643a1',
     text : {
         main : '#404B83',
         secondary : '#1a1a1a'

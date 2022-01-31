@@ -14,6 +14,25 @@ const AnimationWrapper = styled.div<Animation>`
     ${props => props.triggered ? fadeInStyleCreator(props.direction) : staticStyleCreator(props.direction)}; 
 `;
 
+const MoreLink = styled.span`
+    float : right;
+   
+    margin : 10px 10px 0px 0px;
+    text-decoration: underline;
+    cursor : pointer;
+
+    a {
+        color : ${props => props.theme.main};
+    }
+
+    &:hover{
+        a {
+            color : ${props => props.theme.text.main};
+        }
+     
+    }
+`;
+
 /* Header */
 const HeaderContainer = styled.nav<ContactProps>`
     width : 100%;
@@ -81,6 +100,7 @@ const SayHiButton = styled.div<ContactProps>`
     font-weight : 500;
     cursor : pointer;
     user-select : none;
+    z-index : 500;
 
     transition : color 0.1s ease-in-out, opacity 0.5s ease-in-out;
    
@@ -122,7 +142,7 @@ const Section = styled.section`
     flex-direction : row;
     align-items : center;
     justify-content : space-between;
-    margin : 60px 0px;
+    margin-bottom : 80px;
 
     @media only screen and (max-width: 600px) {
         flex-direction : column;
@@ -414,7 +434,7 @@ const BulletList = styled.ul`
     li{
         display : flex;
         align-items : center;
-        margin : 4px 0px;
+        margin : 8px 0px;
 
         svg{
             color : ${props => props.theme.secondary};
@@ -765,7 +785,8 @@ export {
     BackgroundStripes,
     FloatingImageWrapper,
     LandingPageTextWrapper,
-    WritingTitleWrapper
+    WritingTitleWrapper,
+    MoreLink
 }
 
 

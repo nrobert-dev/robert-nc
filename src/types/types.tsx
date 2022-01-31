@@ -45,3 +45,8 @@ export interface Animation {
   delay?: string
   direction?: Direction
 }
+
+interface NavItem {
+  title : String,
+  path : String
+};

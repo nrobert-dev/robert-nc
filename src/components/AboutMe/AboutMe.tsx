@@ -10,6 +10,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import * as SCC from './AboutMe.styles';
 import { useInView } from 'react-intersection-observer';
 import { useWindowSize } from '../../hooks';
+import CustomTooltip from "../CustomTooltip";
 
 const technologies : string[] = [
     "Javascript",
@@ -64,16 +65,17 @@ const AboutMe = () => {
                         <div>           
                             <SC.SectionText>
                                 <p>
-                                    I am a <strong>Software Developer</strong> with over <strong>4 years</strong> of experience building various web applications, data analytics visualisations, 
-                                    dashboards and component libraries for the web. 
+                                    I am a <strong>Software Developer</strong> with over <strong>4 years</strong> of experience building cool stuff for the web.
                                 </p>
                                 <p>
-                                    I am enthusiastic, hard-working and curious about the world around me. 
-                                    I don't give up easily and I know where and how to look for solutions when problems arise. 
-                                    I've always had a strong passion to create things and I constantly challenge myself to get better along the way.    
+                                    So far I have worked and helped build <strong>web apps, data visualisations, dashboards, mobile apps and games!</strong>
+                                </p>
+                                <p>
+                                    I've always had a strong passion to create and develop beautiful experiences for people. My experiences across
+                                    multiple domains (games, web and mobile) helped me develop strong problem solving skills ready to be put to use for <strong>YOUR</strong> project.
                                 </p>    
                                 <p>
-                                    My professional experience:
+                                    Here's a summary of my <strong>professional experience</strong>:
                                 </p>                                                 
                             </SC.SectionText>
                         
@@ -86,13 +88,13 @@ const AboutMe = () => {
                                                     @Toluna Corporate - Current
                                                 </SC.MainPosition>
                                                 <SC.BulletList>
-                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Development using React, Redux, NodeJS</li>
-                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Handle front-end project deployments using Microsoft Azure</li>
-                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Plan infrastructure and architecture for each project based on client's specs and requirements</li>
-                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Perform regular code reviews and engage developers in the code review process</li>
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/><span>Development using <strong>React, Redux, NodeJS</strong></span></li>
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/><span>Handle front-end project deployments using  <strong>Microsoft Azure</strong></span></li>
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/><span>Plan <strong>front-end infrastructure and architecture</strong> for each project based on client's specs and requirements</span></li>
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/><span>Perform regular <strong>code reviews</strong> and engage developers in the code review process</span></li>
                                                     <li><PanoramaFishEyeIcon fontSize='small'/>Offer mentoring and support to team members and handle training of new joiners</li>
                                                     <li><PanoramaFishEyeIcon fontSize='small'/>Lead the development on internal reusable tools and libraries</li>
-                                                    <li><PanoramaFishEyeIcon fontSize='small'/>Internal tools back-end development</li>
+                                                    <li><PanoramaFishEyeIcon fontSize='small'/><span>Internal tools <strong>back-end development</strong></span></li>
                                                 </SC.BulletList>
                                             </SC.TabContentWrapper>,
                                               <SC.TabContentWrapper>
@@ -100,9 +102,9 @@ const AboutMe = () => {
                                                   @Toluna Corporate - Nov 2018 until July 2020
                                               </SC.MainPosition>
                                               <SC.BulletList>
-                                                  <li><PanoramaFishEyeIcon fontSize='small'/>Front-end development using React, Redux on dashboards, component libraries and internal tools</li>
-                                                  <li><PanoramaFishEyeIcon fontSize='small'/>Internal tools back-end development using : ASP.NET C# and Microsoft SQL </li>
-                                                  <li><PanoramaFishEyeIcon fontSize='small'/>Full Stack development for various Toluna products</li>
+                                                  <li><PanoramaFishEyeIcon fontSize='small'/><span>Front-end development using <strong>React, Redux</strong> on dashboards, component libraries and internal tools</span></li>
+                                                  <li><PanoramaFishEyeIcon fontSize='small'/><span>Internal tools back-end development using : <strong>ASP.NET C# and Microsoft SQL</strong></span></li>
+                                                  <li><PanoramaFishEyeIcon fontSize='small'/><span></span>Full Stack development for various Toluna products</li>
       
                                               </SC.BulletList>
                                           </SC.TabContentWrapper>,
@@ -111,6 +113,7 @@ const AboutMe = () => {
                                                  @Other Work
                                              </SC.MainPosition>
                                              <SC.BulletList>
+                                             <li><PanoramaFishEyeIcon fontSize='small'/><span><strong>Bachelor's Degree in Computer Science</strong></span></li>
                                                  <li><PanoramaFishEyeIcon fontSize='small'/>Internship at Nokia where I helped develop an internal mailing system based on events</li>
                                                  <li><PanoramaFishEyeIcon fontSize='small'/>Internship at Haufe Group where I helped develop a mobile application for keeping track of meeting room availability</li>
                                                  <li><PanoramaFishEyeIcon fontSize='small'/>Freelancer offering 3D modelling services for various video games</li>
@@ -129,11 +132,11 @@ const AboutMe = () => {
                 <SC.AnimationWrapper ref={refTech} triggered={inViewTech} direction='x'>
                         <SCC.TechTagResponsiveWrapper>
                             <SC.TechStackTitle>Technologies I work with 
-                            <Tooltip 
+                            <CustomTooltip 
                                 title="If you're not a developer and don't know what these mean, don't worry. I can guide you through it. 
                                 I always keep up to date with the latest tools and advancements in the industry so that your business or projects can have the best technology stack.">
                                 <HelpIcon fontSize="small"/>
-                            </Tooltip></SC.TechStackTitle>
+                            </CustomTooltip></SC.TechStackTitle>
                             {technologies.map(tech => <TechTag title={tech}/>)}
                         </SCC.TechTagResponsiveWrapper>           
                 </SC.AnimationWrapper>
