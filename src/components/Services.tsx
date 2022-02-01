@@ -9,7 +9,7 @@ const Services = () => {
                     <SC.ServicesWrapper>
                         <SC.ServiceWrapper>
                             <StaticImage
-                                src="../images/frontendimg.png"
+                                src="https://robertnechitelea-2a154.web.app/images/frontendimg.png"
                                 width={400}
                                 quality={95}
                                 formats={["auto", "webp", "avif"]}
@@ -20,7 +20,7 @@ const Services = () => {
                         </SC.ServiceWrapper>
                         <SC.ServiceWrapper>
                             <StaticImage
-                                src="../images/backendservices.png"
+                                src="https://robertnechitelea-2a154.web.app/images/backendservices.png"
                                 width={400}
                                 quality={95}
                                 formats={["auto", "webp", "avif"]}
@@ -31,7 +31,7 @@ const Services = () => {
                         </SC.ServiceWrapper>
                         <SC.ServiceWrapper>
                             <StaticImage
-                                src="../images/3dservicesimg.png"
+                                src="https://robertnechitelea-2a154.web.app/images/3dservicesimg.png"
                                 width={400}
                                 quality={95}
                                 formats={["auto", "webp", "avif"]}

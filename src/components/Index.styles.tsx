@@ -568,28 +568,47 @@ const ProjectWrapper = styled.div`
     display : flex;
     flex-direction : row;
     margin-bottom : 49px;
+    position : relative;
 
     @media only screen and (min-width: 400px) {
-        flex-direction : column-reverse;
+        flex-direction : column;
         align-items : center;
     }
     @media only screen and (min-width: 1300px) {
-        flex-direction : row;
+        flex-direction : column;
     } 
 
 `;
 
 const DescriptionWrapper = styled.div`
-    max-width : 600px;
+    max-width : 480px;
     background: ${props => props.theme.cards.background};
     border-radius : 6px;
-    position : relative;
     margin : auto 0;
     box-sizing : border-box;
     padding : 20px 25px;
     z-index : 0;
     box-shadow: ${props => props.theme.main} 0px 0px 0px 0px inset,  ${props => props.theme.backgroundSet.start} -8px 9px 0px -3px, ${props => props.theme.secondary} -8px 9px;
 
+   
+
+    @media only screen and (min-width: 400px) {
+        max-width : 100%;
+        position: relative;
+    }
+    @media only screen and (min-width: 768px) {
+        max-width : 100%;
+        position: relative;
+    }
+    @media only screen and (min-width: 1200px) {
+        position: absolute;
+        top : 50%;
+        transform : translate(0px, -50%);
+        right : -100px;
+        z-index: 100;
+        max-width : 480px;
+    } 
+  
     h4 {
         color : ${props => props.theme.secondary};
         margin : 0;
@@ -632,43 +651,26 @@ const VisitProject = styled.div`
 const ProjectImageWrapper = styled.div`
     position : relative;
     overflow : hidden;
-    box-shadow: rgba(0, 0, 0, 0.85) 0px 5px 15px;
     border-radius : 10px;
 
+   
+
     @media only screen and (min-width: 400px) {
-        width : 340px;
+        img {
+            max-width : 100%;
+        }
     }
     @media only screen and (min-width: 768px) {
-        width : 660px;
-    }
-    @media only screen and (min-width: 992px) {
-        width : 600px;
+        img {
+            max-width : 100%;
+        }
     }
     @media only screen and (min-width: 1200px) {
-        width : 1000px;
+        img {
+            max-width : 80%;
+        }
     } 
-
-    &:hover{
-        > * {
-            &:first-child {
-                opacity : 0.2;
-            }
-          }
-    }
-
-    img {
-        max-width : 100%;
-    }
-`;
-
-const ProjectImageGradient = styled.div`
-     position : absolute;
-     inset : 0 0 0 0;
-     border-radius : 10px;
-     background : linear-gradient(90deg, rgba(177,47,86,0.6390756986388305) 0%, rgba(26,102,213,0.5130252784707633) 100%);
-     z-index : 11;
-
-     transition : opacity 0.3s ease-in;
+  
 `;
 
 
@@ -780,7 +782,6 @@ export {
     FAQWrapper,
     FAQContainer,
     AnimationWrapper,
-    ProjectImageGradient,
     ProjectImageWrapper,
     BackgroundStripes,
     FloatingImageWrapper,

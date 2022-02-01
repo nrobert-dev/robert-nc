@@ -5,8 +5,6 @@ import TechTag from './TechTag';
 import IosShare from '@mui/icons-material/IosShare';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { useInView } from 'react-intersection-observer';
-import gif from '../images/blog-gif.gif';
-import gif2 from '../images/pokit-gif.gif';
 
 const Projects = () => {
     const [ref, inView] = useInView({
@@ -25,6 +23,9 @@ const Projects = () => {
                     <SC.ProjectsWrapper>
                         <SC.AnimationWrapper triggered={inView} direction='x' delay='600ms'>
                             <SC.ProjectWrapper>
+                                <SC.ProjectImageWrapper>
+                                    <img src={'https://robertnechitelea-2a154.web.app/images/blog-gif.gif'} alt='A gif of images showing the blog'/>
+                                </SC.ProjectImageWrapper>    
                                 <SC.DescriptionWrapper>
                                     <h4>Tech and Programming Blog</h4>
                                     <p>
@@ -48,17 +49,13 @@ const Projects = () => {
                                         </a>       
                                     </SC.VisitProject>
                                 </SC.DescriptionWrapper>
-                                <SC.ProjectImageWrapper>
-                                    <SC.ProjectImageGradient/>
-                                    <img src={gif} alt='A gif of images showing the blog'/>
-                                </SC.ProjectImageWrapper>         
+             
                             </SC.ProjectWrapper>
                         </SC.AnimationWrapper>
                         <SC.AnimationWrapper triggered={inView} direction='x' delay='1200ms'>
                             <SC.ProjectWrapper>
-                                <SC.ProjectImageWrapper>
-                                    <SC.ProjectImageGradient/>
-                                    <img src={gif2} 
+                                <SC.ProjectImageWrapper>                                 
+                                    <img src={'https://robertnechitelea-2a154.web.app/images/pokit-gif.gif'} 
                                         alt='A gif of images showing the blog'
                                         style={{
                                             borderRadius : '10px',
