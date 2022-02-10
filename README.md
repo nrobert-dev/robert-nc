@@ -4,4 +4,4 @@ This is my newest, updated for 2022 portfolio. I wrote it using Typescript and G
 
 ## 💫 Wanna visit me?
 
-[Check it out here!](https://www.gatsbyjs.com/products/cloud/)
+[Check it out here!](https://robertnc.com/)
