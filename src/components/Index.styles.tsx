@@ -203,7 +203,7 @@ const Rectangle = styled.div<RectProps>`
     right : ${props => props.alignment === 'right' ? 0 : null};
     left : ${props => props.alignment === 'left' ? 0 : null};
 
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 100px) {
         right : ${null};
         left : ${null};
         width : 100%;
@@ -359,7 +359,7 @@ const WritingTitleWrapper = styled.div`
     width : 100%;
     display : flex;
 
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 100px) {
         justify-content : center;
     }
     @media only screen and (min-width: 1200px) {
@@ -468,8 +468,9 @@ const GlobalStyle = createGlobalStyle`
 const Container = styled.div`
     margin : 0 auto;
     max-width : 1310px;
+    overflow : hidden;
 
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 100px) {
         max-width : 600px;
     }
     @media only screen and (min-width: 768px) {
@@ -486,7 +487,7 @@ const Container = styled.div`
 /* Services Section */
 const ServicesSection = styled.div`
     background: ${props => props.theme.dark};    
-    margin : 200px 0px;
+    margin : 100px 0px;
     padding : 20px 0px;
 
     h2 {
@@ -502,7 +503,7 @@ const ServicesWrapper = styled.div`
     justify-content : space-evenly;
     align-items : center;
 
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 100px) {
       flex-direction : column;
     }
     @media only screen and (min-width: 768px) {
@@ -556,7 +557,7 @@ const ProjectsWrapper = styled.section`
     flex-direction : column;
     margin : 0 auto;
 
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 100px) {
        align-items : center;
     }
     @media only screen and (min-width: 1200px) {
@@ -570,7 +571,7 @@ const ProjectWrapper = styled.div`
     margin-bottom : 49px;
     position : relative;
 
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 100px) {
         flex-direction : column;
         align-items : center;
     }
@@ -592,7 +593,7 @@ const DescriptionWrapper = styled.div`
 
    
 
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 100px) {
         max-width : 100%;
         position: relative;
     }
@@ -655,7 +656,7 @@ const ProjectImageWrapper = styled.div`
 
    
 
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 100px) {
         img {
             max-width : 100%;
         }
@@ -727,6 +728,7 @@ const Hyperlink = styled.a`
 `;
 
 const LandingPageTextWrapper = styled.div`
+    margin : 30px 0px;
     @media only screen and (max-width: 600px) {
         max-width : 88%;
     }

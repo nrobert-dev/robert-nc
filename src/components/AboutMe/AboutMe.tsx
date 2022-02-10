@@ -79,7 +79,7 @@ const AboutMe = () => {
                                 </p>                                                 
                             </SC.SectionText>
                         
-                            <SC.AnimationWrapper style={{height : '350px'}} triggered={inViewText} ref={refText}>
+                            <SC.AnimationWrapper triggered={inViewText} ref={refText}>
                                 <Tabs tabs={["@Technical Lead", "@Full Stack Developer", "@Others"]}
                                     tabChildren={
                                         [

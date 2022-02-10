@@ -17,7 +17,7 @@ export const AboutMeContaienr = styled.div`
     flex-direction : row;
     position : relative;
 
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 100px) {
         flex-direction : column;
         align-items : center;
 
@@ -71,11 +71,11 @@ export const AboutMeContaienr = styled.div`
 `;
 
 const TechTagResponsiveWrapper = styled.div`
-    margin : 0 auto;
+    margin : 0px auto;
     width : 100%;
 
-    @media only screen and (min-width: 400px) {
-        margin-top : 90px;
+    @media only screen and (min-width: 100px) {
+        margin-top : 200px;
         width : 80%;
     }
     @media only screen and (min-width: 768px) {
