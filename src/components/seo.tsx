@@ -88,7 +88,8 @@ function Seo({ description, lang, meta, title } : MetaData) {
     >
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={""}/>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet"/> 
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet"/>
+      <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e57ca678869d40d798277745d742bc35"}'/>
     </Helmet>
   )
 }
