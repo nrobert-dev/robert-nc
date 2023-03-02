@@ -593,18 +593,6 @@ const DescriptionWrapper = styled.div`
     z-index : 0;
     box-shadow: ${props => props.theme.main} 0px 0px 0px 0px inset,  ${props => props.theme.backgroundSet.start} -8px 9px 0px -3px, ${props => props.theme.secondary} -8px 9px;
 
-   
-
-    @media only screen and (min-width: 100px) {
-        max-width : 100%;
-        position: relative;
-    }
-    @media only screen and (min-width: 768px) {
-        max-width : 100%;
-        position: relative;
-    }
-   
-  
     h4 {
         color : ${props => props.theme.secondary};
         margin : 0;
@@ -616,6 +604,37 @@ const DescriptionWrapper = styled.div`
         color : ${props => props.theme.text.main};
         font-size : 14px;
     }
+    
+    @media only screen and (min-width: 100px) {
+        h4 {
+          width : 200px;
+        }
+    }
+    
+    @media only screen and (min-width: 400px) {
+        h4 {
+          width : 200px;
+        }
+    }
+    
+    @media only screen and (min-width: 500px) {
+        h4 {
+          width : auto;
+        }
+    }
+        
+    }
+
+    @media only screen and (min-width: 100px) {
+        max-width : 100%;
+        position: relative;
+        
+    }
+    @media only screen and (min-width: 768px) {
+        max-width : 100%;
+        position: relative;
+    }
+   
 `;
 
 const VisitProject = styled.div`
