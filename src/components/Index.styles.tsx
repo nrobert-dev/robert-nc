@@ -556,6 +556,7 @@ const ProjectsWrapper = styled.section`
     justify-content : center;
     flex-direction : column;
     margin : 0 auto;
+    align-items : none;
 
     @media only screen and (min-width: 100px) {
        align-items : center;
@@ -567,7 +568,7 @@ const ProjectsWrapper = styled.section`
 
 const ProjectWrapper = styled.div`
     display : flex;
-    flex-direction : row;
+    flex-direction : column;
     margin-bottom : 49px;
     position : relative;
 
@@ -582,7 +583,8 @@ const ProjectWrapper = styled.div`
 `;
 
 const DescriptionWrapper = styled.div`
-    max-width : 480px;
+    max-width : 50%;
+    position : relative;
     background: ${props => props.theme.cards.background};
     border-radius : 6px;
     margin : auto 0;
@@ -601,14 +603,7 @@ const DescriptionWrapper = styled.div`
         max-width : 100%;
         position: relative;
     }
-    @media only screen and (min-width: 1200px) {
-        position: absolute;
-        top : 50%;
-        transform : translate(0px, -50%);
-        right : -100px;
-        z-index: 100;
-        max-width : 480px;
-    } 
+   
   
     h4 {
         color : ${props => props.theme.secondary};

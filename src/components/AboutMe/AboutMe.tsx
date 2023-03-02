@@ -5,7 +5,6 @@ import {DARK_THEME} from '../../utils';
 import Tabs from "../Tabs";
 import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import TechTag from '../TechTag';
-import Tooltip from '@mui/material/Tooltip';
 import HelpIcon from '@mui/icons-material/Help';
 import * as SCC from './AboutMe.styles';
 import { useInView } from 'react-intersection-observer';
@@ -83,7 +82,7 @@ const AboutMe = () => {
                                 <Tabs tabs={["@Technical Lead", "@Full Stack Developer", "@Others"]}
                                     tabChildren={
                                         [
-                                            <SC.TabContentWrapper>
+                                            <SC.TabContentWrapper style={{height : '300px'}}>
                                                 <SC.MainPosition>
                                                     @Toluna Corporate - Current
                                                 </SC.MainPosition>
@@ -97,7 +96,7 @@ const AboutMe = () => {
                                                     <li><PanoramaFishEyeIcon fontSize='small'/><span>Internal tools <strong>back-end development</strong></span></li>
                                                 </SC.BulletList>
                                             </SC.TabContentWrapper>,
-                                              <SC.TabContentWrapper>
+                                              <SC.TabContentWrapper style={{height : '300px'}}>
                                               <SC.MainPosition>
                                                   @Toluna Corporate - Nov 2018 until July 2020
                                               </SC.MainPosition>
@@ -108,7 +107,7 @@ const AboutMe = () => {
       
                                               </SC.BulletList>
                                           </SC.TabContentWrapper>,
-                                          <SC.TabContentWrapper>
+                                          <SC.TabContentWrapper style={{height : '300px'}}>
                                              <SC.MainPosition>
                                                  @Other Work
                                              </SC.MainPosition>

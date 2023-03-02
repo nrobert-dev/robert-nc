@@ -23,9 +23,31 @@ const Projects = () => {
                     <SC.ProjectsWrapper>
                         <SC.AnimationWrapper triggered={inView} direction='x' delay='600ms'>
                             <SC.ProjectWrapper>
-                                <SC.ProjectImageWrapper>
-                                    <img src={'https://robertnechitelea-2a154.web.app/images/blog-gif.gif'} alt='A gif of images showing the blog'/>
-                                </SC.ProjectImageWrapper>    
+                                <SC.DescriptionWrapper>
+                                    <h4>Nootify API</h4>
+                                    <p>
+                                        A lightweight notification service and API. Currently released in Alpha version.
+                                    </p>
+                                    <p>
+                                        Nootify is a notification managing service intended for developers.
+                                        It allows you to easily connect your web, mobile or desktop applications to a central notification managing system.
+                                        Notifications are small, character-limited messages that are sent from the service to the connected clients.
+                                    </p>
+                                    <TechTag size='small' title='React'/>
+                                    <TechTag size='small' title='Node.js'/>
+                                    <TechTag size='small' title='Mongo'/>
+                                    <SC.VisitProject>
+                                        <a href={HELPFUL_URLS.nootify} target={'_blank'}>
+                                            <IosShare/>
+                                        </a>
+                                    </SC.VisitProject>
+                                    <SC.VisitProject>
+                                    </SC.VisitProject>
+                                </SC.DescriptionWrapper>
+                            </SC.ProjectWrapper>
+                        </SC.AnimationWrapper>
+                        <SC.AnimationWrapper triggered={inView} direction='x' delay='1200ms'>
+                            <SC.ProjectWrapper>
                                 <SC.DescriptionWrapper>
                                     <h4>Tech and Programming Blog</h4>
                                     <p>
@@ -52,33 +74,28 @@ const Projects = () => {
              
                             </SC.ProjectWrapper>
                         </SC.AnimationWrapper>
-                        <SC.AnimationWrapper triggered={inView} direction='x' delay='1200ms'>
+                        <SC.AnimationWrapper triggered={inView} direction='x' delay='1800ms'>
                             <SC.ProjectWrapper>
-                                <SC.ProjectImageWrapper>                                 
-                                    <img src={'https://robertnechitelea-2a154.web.app/images/pokit-gif.gif'} 
-                                        alt='A gif of images showing the blog'
-                                        style={{
-                                            borderRadius : '10px',
-                                            boxShadow: 'rgba(0, 0, 0, 0.85) 0px 5px 15px',
-                                            zIndex : 10,
-                                            position : 'relative'
-                                        }}
-                                    />
-                                </SC.ProjectImageWrapper>
-                            
                                 <SC.DescriptionWrapper>
-                                    <h4>Pocket Pages</h4>
+                                    <h4>Dream of Me - Escape Room Game</h4>
                                     <p>
-                                        A web application for quickly creating simple, modular and fast websites. 
-                                        Featuring a component based system, the website allows the creation of single page applications using various
-                                        themes and styling options. Currently in development. 
+                                        A first-person adventure game built in Unity. I created all the assets and programming myself. The project was intended to be released
+                                        as a full game but due to personal reasons it had to stay in a demo state.
                                     </p>
-                                    <TechTag size='small' title='React'/>
-                                    <TechTag size='small' title='Next.js'/>
-                                    <TechTag size='small' title='Firebase'/>
-                                    <SC.VisitProject>                                   
+                                    <p>
+                                        The game received quite good feedback from the community, with lots of positive comments and even gameplay videos from various Youtube creators.
+                                    </p>
+
+                                    <TechTag size='small' title='Unity'/>
+                                    <TechTag size='small' title='C#'/>
+                                    <TechTag size='small' title='Blender'/>
+                                    <SC.VisitProject>
+                                        <a href={'https://thunderent.itch.io/dream-of-me'} target={'_blank'}>
+                                            <IosShare/>
+                                        </a>
                                     </SC.VisitProject>
-                                </SC.DescriptionWrapper> 
+                                </SC.DescriptionWrapper>
+
                             </SC.ProjectWrapper>
                         </SC.AnimationWrapper>
                     </SC.ProjectsWrapper>

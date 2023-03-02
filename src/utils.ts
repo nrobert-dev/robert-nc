@@ -7,7 +7,8 @@ export const HELPFUL_URLS = {
     github : 'https://github.com/nrobert-dev/',
     artstation : 'https://www.artstation.com/thunderent/',
     blog : 'https://blog.robertnc.com/',
-    mail : 'mailto:robert.nechitelea@gmail.com'
+    mail : 'mailto:robert.nechitelea@gmail.com',
+    nootify : 'https://nootify.onrender.com/'
 };
 
 export const DARK_THEME : Theme = {
